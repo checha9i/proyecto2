@@ -34,6 +34,7 @@ public class Proyecto2 {
    arbolb.insertar(arbolb.p,"prueba","ti","sd","as","df","gh","jk","holi","hola");
    arbolb.insertar(arbolb.p,"pru44eba","ti","sd","as","df","gh","jk","holi","hola");
    arbolb.insertar(arbolb.p,"pruebyya","ti","sd","as","df","gh","jk","holi","hola");
+      arbolb.insertar(arbolb.p,"pruebsda","ti","sd","as","df","gh","jk","holi","hola");
    
           Graficar grafico = new Graficar(arbolb);
           
