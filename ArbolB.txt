@@ -1,9 +1,0 @@
-digraph grafica{
-rankdir=TB;
-node
-[shape = record, style=filled, fillcolor=steelblue1];nodo0 [ label ="prueba"];
-nodo00 [ label ="es|pru44eba"];
-nodo0->nodo00;
-nodo01 [ label ="pruebyya|una"];
-nodo0->nodo01;
-}
