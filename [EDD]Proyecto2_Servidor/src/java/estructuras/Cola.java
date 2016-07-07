@@ -14,9 +14,11 @@ import estructuras.detalle.Info;
 public class Cola {
     private Nodo primero;
     private Nodo ultimo;
+    private int contadorId;
     
     public Cola(){
         this.primero = this.ultimo = null;
+        this.contadorId = 0;
     }
     
     public void insertar(Nodo nuevo){
@@ -27,6 +29,10 @@ public class Cola {
             getUltimo().setSiguiente(nuevo);
             setUltimo(nuevo);
         }//fin else
+    }
+    
+    public Nodo crearNodo(Info dato){
+        return new Nodo(dato, contadorId);
     }
     
     public Nodo remover(){
@@ -74,6 +80,14 @@ public class Cola {
 
     public void setUltimo(Nodo ultimo) {
         this.ultimo = ultimo;
+    }
+
+    public int getContadorId() {
+        return contadorId;
+    }
+
+    public void setContadorId(int contadorId) {
+        this.contadorId = contadorId;
     }
     
     public class Nodo{

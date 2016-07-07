@@ -7,6 +7,7 @@ package estructuras.avl;
 
 import estructuras.Cola;
 import estructuras.ListaSimple;
+import estructuras.detalle.InfoDireccion;
 
 /**
  *
@@ -14,12 +15,33 @@ import estructuras.ListaSimple;
  */
 public class AVL {
     
-    Nodo raiz;
-    int contadorId;
+    private Nodo raiz;
+    private int contadorId;
     
     public AVL(){
         this.contadorId = 0;
         this.raiz = null;
+    }
+    
+    public boolean insertarDireccion(InfoDireccion direccion, String nickname){
+        Nodo usuario = buscar(toAscci(nickname), getRaiz());
+        usuario.getDirecciones().insertar(usuario.getDirecciones().crearNodo(direccion));
+        return false;
+    }
+    
+    public Nodo buscar(int clave, Nodo raiz){
+        if(raiz != null){
+            if(clave == raiz.getClave()){
+                return raiz;
+            }//fin if
+            if(clave < raiz.getClave()){
+                return buscar(clave, raiz.getIzquierdo());
+            }//fin if
+            if(clave > raiz.getClave()){
+                return buscar(clave, raiz.getDerecho());
+            }//fin if
+        }//fin if
+        return null;
     }
     
     private Nodo rotacionDerecha(Nodo nodo){
@@ -57,9 +79,9 @@ public class AVL {
         return nodo; //no se requiere balanceo
     }
     
-    private Nodo insertar(Nodo nuevo, Nodo raiz){
+    public Nodo insertar(Nodo nuevo, Nodo raiz){
         if(raiz == null){
-            contadorId++;
+            setContadorId(getContadorId() + 1);
             return nuevo;
         }//fin if
         if(nuevo.getClave() < raiz.getClave()){ //va a la izquierda
@@ -84,6 +106,31 @@ public class AVL {
         int hl = obtenerAltura(nodo.getIzquierdo());
         int hr = obtenerAltura(nodo.getDerecho());
         nodo.setAltura((hl>hr) ? hl : hr);
+    }
+    
+    private int toAscci(String palabra) {
+        int valor = 0;
+        for (int i = 0; i < palabra.length(); i++) {
+            char caracter = palabra.charAt(i);
+            valor += (int) caracter;
+        }//fin for
+        return valor;
+    }
+
+    public Nodo getRaiz() {
+        return raiz;
+    }
+
+    public void setRaiz(Nodo raiz) {
+        this.raiz = raiz;
+    }
+
+    public int getContadorId() {
+        return contadorId;
+    }
+
+    public void setContadorId(int contadorId) {
+        this.contadorId = contadorId;
     }
     
     public class Nodo{
