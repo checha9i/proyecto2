@@ -7,6 +7,7 @@ package estructuras.avl;
 
 import estructuras.Cola;
 import estructuras.ListaSimple;
+import estructuras.detalle.InfoCompras;
 import estructuras.detalle.InfoDireccion;
 
 /**
@@ -25,7 +26,28 @@ public class AVL {
     
     public boolean insertarDireccion(InfoDireccion direccion, String nickname){
         Nodo usuario = buscar(toAscci(nickname), getRaiz());
-        usuario.getDirecciones().insertar(usuario.getDirecciones().crearNodo(direccion));
+        if(usuario != null){
+            usuario.getDirecciones().insertar(usuario.getDirecciones().crearNodo(direccion));
+            return true;
+        }//fin if
+        return false;
+    }
+    
+    public boolean insertarCompra(InfoCompras compras, String nickname){
+        Nodo usuario = buscar(toAscci(nickname), getRaiz());
+        if(usuario != null){
+            usuario.getCompras().insertar(usuario.getCompras().crearNodo(compras));
+            return true;
+        }//fin if
+        return false;
+    }
+    
+    public boolean insertarCarrito(InfoCompras compras, String nickname){
+        Nodo usuario = buscar(toAscci(nickname), getRaiz());
+        if(usuario != null){
+            usuario.getCarrito().insertar(usuario.getCarrito().crearNodo(compras));
+            return true;
+        }//fin if
         return false;
     }
     
