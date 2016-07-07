@@ -76,12 +76,12 @@ public class Arbol {
         return i;
     }
 
-    public void insertar(Bnodo raiz, String id, String Artista, String Anio, String Genero, String Album, String Estado, String ruta,String archivo,String otro) {
+    public void insertar(Bnodo raiz, String id, String Fecha, String Total) {
         Nodo c = new Nodo();
         c.id = id;
      
-        c.Fecha = Artista;
-        c.Total = Anio;
+        c.Fecha = Fecha;
+        c.Total = Total;
       
         
         
