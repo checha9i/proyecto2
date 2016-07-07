@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package proyecto2;
+package estructuras.arbolB;
 
 import java.util.ArrayList;
 
@@ -25,7 +25,7 @@ public class Proyecto2 {
      */
 
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         // TODO code application logic here
         
         
@@ -38,6 +38,6 @@ public class Proyecto2 {
    
           Graficar grafico = new Graficar(arbolb);
           
-    }
+    }*/
     
 }
