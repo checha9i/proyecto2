@@ -9,6 +9,7 @@ import estructuras.Cola;
 import estructuras.ListaSimple;
 import estructuras.detalle.InfoCompras;
 import estructuras.detalle.InfoDireccion;
+import genericos.Usuario;
 
 /**
  *
@@ -161,8 +162,7 @@ public class AVL {
         private int altura;
         private Nodo derecho;
         private Nodo izquierdo;
-        private String nickname;
-        private String contraseña;
+        Usuario usuario;
         private ListaSimple direcciones;
         private Cola compras;
         private Cola carrito;
@@ -171,8 +171,7 @@ public class AVL {
             this.clave = toAscci(nickname);
             this.id = id;
             this.altura = 1;
-            this.nickname = nickname;
-            this.contraseña = contraseña;
+            this.usuario = new Usuario();
             this.direcciones = new ListaSimple();
             this.compras = new Cola();
             this.carrito = new Cola();
@@ -217,22 +216,6 @@ public class AVL {
 
         public void setIzquierdo(Nodo izquierdo) {
             this.izquierdo = izquierdo;
-        }
-
-        public String getNickname() {
-            return nickname;
-        }
-
-        public void setNickname(String nickname) {
-            this.nickname = nickname;
-        }
-
-        public String getContraseña() {
-            return contraseña;
-        }
-
-        public void setContraseña(String contraseña) {
-            this.contraseña = contraseña;
         }
 
         public ListaSimple getDirecciones() {
