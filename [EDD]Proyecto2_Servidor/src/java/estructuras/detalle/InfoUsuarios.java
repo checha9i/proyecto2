@@ -16,6 +16,8 @@ public class InfoUsuarios implements Info{
     
     @Override
     public String getDotInfo(){
-        return "";
+        String grafo = "";
+        
+        return grafo;
     }
 }
