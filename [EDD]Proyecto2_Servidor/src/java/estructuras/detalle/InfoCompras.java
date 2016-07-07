@@ -15,11 +15,14 @@ public class InfoCompras implements Info{
     private Producto producto;
     private int cantidad;
     
+    public InfoCompras(Producto producto, int cantidad){
+        this.producto = producto;
+        this.cantidad = cantidad;
+    }
+    
     @Override
     public String getDotInfo(){
-        String dot = "";
-        dot += "Cantidad: " + getCantidad() + " \\n";
-        return dot;
+        return "Cantidad: " + getCantidad() + " \\nProducto: " + getProducto().getNombre();
     }
 
     public Producto getProducto() {
