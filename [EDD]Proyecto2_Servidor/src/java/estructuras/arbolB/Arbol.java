@@ -80,13 +80,9 @@ public class Arbol {
         Nodo c = new Nodo();
         c.id = id;
      
-        c.Artista = Artista;
-        c.Anio = Anio;
-        c.Genero = Genero;
-        c.Album = Album;
-        c.Estado = Estado;
-        c.Ruta= ruta;
-        c.Archivo= archivo;
+        c.Fecha = Artista;
+        c.Total = Anio;
+      
         
         
         Empujar(c, raiz);
@@ -214,7 +210,7 @@ public class Arbol {
                 i++;
                 if (i <= nodo.Cuentas) {
                     salida = salida + "Num ID: " + nodo.Claves[i - 1].id + "\n";
-                    salida = salida + "\n -String 1: " + nodo.Claves[i - 1].Cancion + "\n -String 2: " + nodo.Claves[i - 1].Artista + "\n";
+                    
                     salida = salida + "-------------------------------\n";
                     if (i < nodo.Cuentas) {
                         Pila.InsertaFinal(nodo, i);
@@ -239,8 +235,8 @@ public class Arbol {
 
                 if (actual.Claves[k] != null) {
                     System.out.println("id:  " + actual.Claves[k].id);
-                    System.out.println("Dato1: " + actual.Claves[k].Cancion);
-                    System.out.println("Dato2: " + actual.Claves[k].Album);
+                    System.out.println("Dato1: " + actual.Claves[k].Fecha);
+                    System.out.println("Dato2: " + actual.Claves[k].Total);
                     System.out.println("\n");
 
                     escribeNodo(actual.Ramas[k]);
@@ -309,7 +305,7 @@ public class Arbol {
                 i++;
                 if (i <= nodo.Cuentas) {
                   //CONDICIONES CON LAS QUE BUSCA 
-                    if (nodo.Claves[i - 1].id.equals(x) || nodo.Claves[i - 1].Cancion.equals(x)) {
+                    if (nodo.Claves[i - 1].id.equals(x) || nodo.Claves[i - 1].Fecha.equals(x)) {
                         retorno = true;
                     }
 
@@ -345,7 +341,7 @@ public class Arbol {
 
                         temp = nodo.Claves[i - 1];
                         break;
-                    } else if (nodo.Claves[i - 1].Cancion.equals(x)) {
+                    } else if (nodo.Claves[i - 1].Fecha.equals(x)) {
                         temp = nodo.Claves[i - 1];
                         break;
                     }
@@ -380,8 +376,7 @@ public class Arbol {
                 i++;
                 if (i <= nodo.Cuentas) {
                     if (nodo.Claves[i - 1].id.equals(x)) {
-                    envia = "Album: "+nodo.Claves[i - 1].Album +" Artistas: "+nodo.Claves[i - 1].Artista
-                            +" Año: "+ nodo.Claves[i - 1].Anio +" Genero: "+nodo.Claves[i - 1].Genero;
+                    envia = "Album: "+nodo.Claves[i - 1].Fecha +" Artistas: "+nodo.Claves[i - 1].Total;
                    
                     // }
                     }
@@ -453,7 +448,7 @@ public class Arbol {
                 Pila.EliminaFinal();
                 i++;
                 if (i <= nodo.Cuentas) {
-                    envia = envia + "," + nodo.Claves[i - 1].Artista;
+                    envia = envia + "," + nodo.Claves[i - 1].Total;
                     System.out.println("imprime " + nodo.Claves[i - 1].id);
                     // }
 
@@ -488,7 +483,7 @@ public class Arbol {
                 i++;
                 if (i <= nodo.Cuentas) {
                   
-                    envia = envia + "," + nodo.Claves[i - 1].Album;
+                    envia = envia + "," + nodo.Claves[i - 1].Fecha;
                     System.out.println("imprime " + nodo.Claves[i - 1].id);
                     // }
 
@@ -502,7 +497,7 @@ public class Arbol {
         System.out.println("Salen " + envia);
         return envia;
     }
-
+/*
     public String TodoAno() {
         String envia = "";
         boolean retorno = false;
@@ -571,8 +566,8 @@ public class Arbol {
         System.out.println("Salen " + envia);
         return envia;
     }
-    
-    
+  */  
+    /*
       public String RutaImagenMusica() {
         String envia = "";
         boolean retorno = false;
@@ -715,7 +710,7 @@ public class Arbol {
     }
       
     
-      
+      */
        public String BUSCARparaMODIFICAR(String x) {
         String envia = "";
         boolean retorno = false;
