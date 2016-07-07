@@ -24,11 +24,56 @@ public class AVL {
     
     private Nodo rotacionDerecha(Nodo nodo){
         Nodo temp = nodo.getIzquierdo();
+        nodo.setIzquierdo(temp.getDerecho());
+        temp.setDerecho(nodo);
+        arreglarAltura(nodo);
+        arreglarAltura(temp);
         return temp;
     }
     
-    private void arreglarFe(Nodo nodo){
-        
+    private Nodo rotacionIzquierda(Nodo nodo){
+        Nodo temp = nodo.getDerecho();
+        nodo.setDerecho(temp.getIzquierdo());
+        temp.setIzquierdo(nodo);
+        arreglarAltura(nodo);
+        arreglarAltura(temp);
+        return temp;
+    }
+    
+    private Nodo balancear(Nodo nodo){
+        arreglarAltura(nodo);
+        if(fe(nodo) == 2){
+            if(fe(nodo.getDerecho()) < 0){
+                nodo.setDerecho(rotacionDerecha(nodo.getDerecho()));
+            }//fin if
+            return rotacionIzquierda(nodo);
+        }//fin if
+        if(fe(nodo) == -2){
+            if(fe(nodo.getIzquierdo()) > 0){
+                nodo.setIzquierdo(rotacionIzquierda(nodo.getIzquierdo()));
+            }//fin if
+            return rotacionDerecha(nodo);
+        }//fin if
+        return nodo; //no se requiere balanceo
+    }
+    
+    private Nodo insertar(Nodo nuevo, Nodo raiz){
+        if(raiz == null){
+            contadorId++;
+            return nuevo;
+        }//fin if
+        if(nuevo.getClave() < raiz.getClave()){ //va a la izquierda
+            raiz.setIzquierdo(insertar(nuevo, raiz.getIzquierdo()));
+        }else if(nuevo.getClave() > raiz.getClave()){ //va a la derecha
+            raiz.setDerecho(insertar(nuevo, raiz.getDerecho()));
+        }else{ //ya existe
+            //log error
+        }//fin else
+        return balancear(raiz);
+    }
+    
+    private int fe(Nodo nodo){
+        return obtenerAltura(nodo.getDerecho())-obtenerAltura(nodo.getIzquierdo());
     }
     
     private int obtenerAltura(Nodo nodo){
