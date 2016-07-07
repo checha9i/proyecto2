@@ -15,6 +15,12 @@ public class ListaSimple {
     
     private Nodo primero;
     private Nodo ultimo;
+    private int contadorId;
+    
+    public ListaSimple(){
+        this.primero = this.ultimo = null;
+        this.contadorId = 0;
+    }
     
     public void insertar(Nodo nuevo){
         if(isEmpty()){
@@ -24,6 +30,10 @@ public class ListaSimple {
             getUltimo().setSiguiente(nuevo);
             setUltimo(nuevo);
         }//fin else
+    }
+    
+    public Nodo crearNodo(Info dato){
+        return new Nodo(dato, getContadorId());
     }
     
     public Nodo remover(Info dato){
@@ -76,6 +86,14 @@ public class ListaSimple {
 
     public void setUltimo(Nodo ultimo) {
         this.ultimo = ultimo;
+    }
+
+    public int getContadorId() {
+        return contadorId;
+    }
+
+    public void setContadorId(int contadorId) {
+        this.contadorId = contadorId;
     }
     
     public class Nodo{
