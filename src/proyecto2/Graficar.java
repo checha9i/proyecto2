@@ -19,7 +19,7 @@ public class Graficar {
         String codigo = "digraph grafica{\n"
                 + "rankdir=TB;\n"
                 + "node\n"
-                + "[shape = circle, style=filled, fillcolor=Yellow];";
+                + "[shape = record, style=filled, fillcolor=steelblue1];";
 
         codigo += CrearNodoPadre(b.p);
         codigo += "}";
@@ -31,7 +31,7 @@ public class Graficar {
         PrintWriter pw = null;
         try {
 
-            fichero = new FileWriter("C:\\Users\\javier\\Documents\\NetBeansProjects\\proyecto2\\src\\proyecto2\\ArbolB.txt");
+            fichero = new FileWriter("ArbolB.txt");
 
             pw = new PrintWriter(fichero);
             pw.print(codigo);
@@ -49,10 +49,10 @@ public class Graficar {
 
             String dotPath = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe";
 
-            String fileInputPath = "C:\\Users\\javier\\Documents\\NetBeansProjects\\proyecto2\\src\\proyecto2\\ArbolB.txt";
+            String fileInputPath = "ArbolB.txt";
 
             //String fileOutputPath = "C:\\Users\\Usuario\\Desktop\\ArbolB.jpg";
-            String fileOutputPath = "C:\\Users\\javier\\Documents\\NetBeansProjects\\proyecto2\\src\\proyecto2\\ArbolB.jpg";
+            String fileOutputPath = "ArbolB.jpg";
             String tParam = "-Tjpg";
             String tOParam = "-o";
 
