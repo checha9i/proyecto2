@@ -19,10 +19,10 @@ import javax.imageio.ImageIO;
  */
 public class Nodo {
     public String id;//
-    public String Artista;
-    public String Cancion;
+    public String Fecha;
+    public String Total;
   
-    public String Anio,Genero,Album,Estado,Ruta,Archivo,otros;
+    
  
     public ArrayList<String> RutaCancion=new ArrayList(); // lista de correo de las personas
 
