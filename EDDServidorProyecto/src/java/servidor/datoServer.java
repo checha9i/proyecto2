@@ -16,8 +16,8 @@ import estructuras.hash.HashTable;
 public class datoServer {
     
     /*INICIALIZACION DE LAS ESTRUCUTRAS EN EL SERVIDOR PARA SER LLAMADAS EN TODO MOMENTO*/
-    public static final AVL usuarios = new AVL();
-    public static final Arbol ventas = new Arbol();
-    public static final HashTable productos = new HashTable(23);
+    public static final AVL USUARIOS = new AVL();
+    public static final Arbol VENTAS = new Arbol();
+    public static final HashTable PRODUCTOS = new HashTable(23);
     
 }
