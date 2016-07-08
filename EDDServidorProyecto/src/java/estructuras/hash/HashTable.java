@@ -23,6 +23,27 @@ public class HashTable {
         tabla = new Producto[this.tamaño];
     }
     
+    public boolean eliminar(Producto producto){
+        for(int i = 0; i < getTabla().length; i++){
+            if(getTabla()[i] == producto){
+                getTabla()[i] = null;
+                setNumeroInserciones(getNumeroInserciones() - 1);
+                return true;
+            }//fin if
+        }//fin for
+        return false;
+    }
+    
+    public boolean modificar(Producto viejo, Producto nuevo){
+        for(int i = 0; i < getTabla().length; i++){
+            if(getTabla()[i] == viejo){
+                getTabla()[i] = nuevo;
+                return true;
+            }//fin if
+        }//fin for
+        return false;
+    }
+    
     public void insertar(Producto producto){
         int indiceArreglo = hash(producto.getCodigo());
         int contador = 2;
