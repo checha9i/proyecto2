@@ -48,4 +48,9 @@ Temporary Items
 /proyecto2/build/
 /[[]EDD]Proyecto2_Servidor/build/
 /[[]EDD]Proyecto2_Servidor/dist/
+<<<<<<< HEAD
 [EDD]Proyecto2_Servidor/nbproject/private/private.xml
+=======
+/EDDServidorProyecto/nbproject/private/
+/EDDServidorProyecto/build/
+>>>>>>> refs/remotes/origin/master
