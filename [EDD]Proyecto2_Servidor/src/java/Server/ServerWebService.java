@@ -13,8 +13,8 @@ import javax.jws.WebParam;
  *
  * @author javier
  */
-@WebService(serviceName = "ServerWeb")
-public class ServerWeb {
+@WebService(serviceName = "ServerWebService")
+public class ServerWebService {
 
     /**
      * This is a sample web service operation
@@ -23,4 +23,20 @@ public class ServerWeb {
     public String hello(@WebParam(name = "name") String txt) {
         return "Hello " + txt + " !";
     }
+    
+        /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "CalcularVolumenEsfera")
+    public double CalcularVolumenEsfera(@WebParam(name = "Radio") double Radio) {
+        //TODO write your implementation code here:
+        double volumen = 0.0d;
+        if(Radio>0)
+        {
+            volumen = (3.0/4.0)* Math.PI* Math.pow(Radio, 3);
+        }
+        return volumen;
+    }
+
+    
 }
