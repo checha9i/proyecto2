@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Volumen/" targetNamespace="http://Volumen/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CalcularVolumenEsfera" type="tns:CalcularVolumenEsfera" />
+  <xs:element name="CalcularVolumenEsferaResponse" type="tns:CalcularVolumenEsferaResponse" />
+  <xs:complexType name="CalcularVolumenEsfera">
+    <xs:sequence>
+      <xs:element name="Radio" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CalcularVolumenEsferaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
