@@ -25,6 +25,73 @@ public class AVL {
         this.raiz = null;
     }
     
+    public Nodo remover(Nodo nodo, int clave){
+        if(nodo == null){
+            return null;
+        }//fin if
+        if(clave < nodo.getClave()){
+            nodo.setIzquierdo(remover(nodo.getIzquierdo(), clave));
+        }else if(clave > nodo.getClave()){
+            nodo.setDerecho(remover(nodo.getDerecho(), clave));
+        }else{ // calve == nodo.getClave()
+            Nodo izquierdo = nodo.getIzquierdo();
+            Nodo derecho = nodo.getDerecho();
+            if(derecho == null){
+                return izquierdo;
+            }//fin if
+            Nodo menor = buscarMenor(derecho);
+            menor.setDerecho(eliminarMenor(derecho));
+            menor.setIzquierdo(izquierdo);
+            return balancear(menor);
+        }//fin else
+        return balancear(nodo);
+    }
+    
+    public String getDot(){
+        String dot = "node [shape=record];\n";
+        dot += getDotNodes(dot, getRaiz());
+        return dot;
+    }
+    
+    private String getDotNodes(String dot, Nodo raiz){
+        String grafo = "";
+        if(raiz != null){
+            grafo += "node"+ raiz.getId() +"[label\"<f0> | <f1> "+ raiz.getUsuario().getNickname() +"\\n"+ raiz.getUsuario().getContraseña() +" | <f2>\"];\n";
+            if(raiz.getIzquierdo() != null){
+                grafo += "\"node" + raiz.getId() +"\":f0 -> \"node" + raiz.getIzquierdo().getId() + "\":f1;\n";
+            }//fin if
+            if(raiz.getDerecho()!= null){
+                grafo += "\"node" + raiz.getId() +"\":f2 -> node" + raiz.getDerecho().getId() + "\":f1;\n";
+            }//fin if
+            if(!raiz.getDirecciones().isEmpty()){
+                grafo += "\"node" + raiz.getId() +"\":f1 -> node" + raiz.getDirecciones().getPrimero().getId() + ";\n";
+                grafo += "{\n" + raiz.getDirecciones().getDot() + "}\n";
+            }//fin if
+            if(!raiz.getCarrito().isEmpty()){
+                grafo += "\"node" + raiz.getId() +"\":f1 -> node" + raiz.getCarrito().getPrimero().getId() + ";\n";
+                grafo += "{\n" + raiz.getCarrito().getDot() + "}\n";
+            }//fin if
+            if(!raiz.getCompras().isEmpty()){
+                grafo += "\"node" + raiz.getId() +"\":f1 -> node" + raiz.getCompras().getPrimero().getId() + ";\n";
+                grafo += "{\n" + raiz.getCompras().getDot() + "}\n";
+            }//fin if
+        }//fin if
+        dot += grafo;
+        return dot;
+    }
+    
+    private Nodo buscarMenor(Nodo nodo){
+        return (nodo.getIzquierdo() != null) ? buscarMenor(nodo.getIzquierdo()) : nodo;
+    }
+    
+    private Nodo eliminarMenor(Nodo nodo){
+        if(nodo.getIzquierdo() == null){
+            return nodo.getDerecho();
+        }//fin if
+        nodo.setIzquierdo(eliminarMenor(nodo.getIzquierdo()));
+        return balancear(nodo);
+    }
+    
     public boolean insertarDireccion(InfoDireccion direccion, String nickname){
         Nodo usuario = buscar(toAscci(nickname), getRaiz());
         if(usuario != null){
@@ -48,6 +115,16 @@ public class AVL {
         if(usuario != null){
             usuario.getCarrito().insertar(usuario.getCarrito().crearNodo(compras));
             return true;
+        }//fin if
+        return false;
+    }
+    
+    public boolean comprobarCredenciales(String nickname, String contraseña){
+        Nodo user = buscar(toAscci(nickname), getRaiz());
+        if(user != null){
+            if(user.getUsuario().getNickname().equals(nickname) && user.getUsuario().getContraseña().equals(contraseña)){
+                return true;
+            }//fin if
         }//fin if
         return false;
     }
@@ -162,7 +239,7 @@ public class AVL {
         private int altura;
         private Nodo derecho;
         private Nodo izquierdo;
-        Usuario usuario;
+        private Usuario usuario;
         private ListaSimple direcciones;
         private Cola compras;
         private Cola carrito;
@@ -248,6 +325,14 @@ public class AVL {
 
         public void setAltura(int altura) {
             this.altura = altura;
+        }
+
+        public Usuario getUsuario() {
+            return usuario;
+        }
+
+        public void setUsuario(Usuario usuario) {
+            this.usuario = usuario;
         }
     }
 }
