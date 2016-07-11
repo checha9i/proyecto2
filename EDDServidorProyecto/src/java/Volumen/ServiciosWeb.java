@@ -8,6 +8,7 @@ import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 
+
 /**
  *
  * @author Aurora
@@ -28,6 +29,19 @@ public class ServiciosWeb {
         }
         return volumen;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "Login")
+    public String Login(@WebParam(name = "User") String User, @WebParam(name = "Pass") String Pass) {
+        //TODO write your implementation code here:
+        String ingreso="Ingreso";
+        
+        
+        return ingreso;
+    }
+
     
     
 }
