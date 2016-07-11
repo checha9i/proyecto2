@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Volumen/" targetNamespace="http://Volumen/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CalcularVolumenEsfera" type="tns:CalcularVolumenEsfera" />
+  <xs:element name="CalcularVolumenEsferaResponse" type="tns:CalcularVolumenEsferaResponse" />
+  <xs:element name="Login" type="tns:Login" />
+  <xs:element name="LoginResponse" type="tns:LoginResponse" />
+  <xs:complexType name="Login">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="User" type="xs:string" />
+      <xs:element minOccurs="0" name="Pass" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LoginResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CalcularVolumenEsfera">
+    <xs:sequence>
+      <xs:element name="Radio" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CalcularVolumenEsferaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
