@@ -41,7 +41,7 @@ public class datoServer {
                     break;
                 case "Producto":
                     if(parametros.length == 5){
-                        //PRODUCTOS.insertar(new Producto(parametros[0],parametros[1],parametros[2],parametros[3],parametros[4]));
+                        PRODUCTOS.insertar(new Producto(parametros[0],parametros[1],parametros[2],parametros[3],parametros[4]));
                     }
                     break;
                 case "Venta":
