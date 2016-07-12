@@ -50,7 +50,7 @@ public class Cola {
     }
     
     public String getDot(){
-        String dot = "\nnode [shape=\"box\"];\n";
+        String dot = "\nnode [shape=record];\n";
         Nodo actual = getPrimero();
         while(actual != null){
             dot += "node" + actual.getId() + "[label=\"" + actual.dato.getDotInfo() + "\"];\n";
