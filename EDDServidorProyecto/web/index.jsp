@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href="cargarDatos.jsp"><h1>Cargar Datos</h1></a>
+        <h1>Hello World!</h1>
     </body>
 </html>

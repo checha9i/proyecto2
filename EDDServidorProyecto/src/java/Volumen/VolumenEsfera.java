@@ -8,13 +8,12 @@ import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 
-
 /**
  *
  * @author Aurora
  */
-@WebService(serviceName = "ServerAspWebService")
-public class ServiciosWeb {
+@WebService(serviceName = "VolumenEsfera")
+public class VolumenEsfera {
 
     /**
      * Web service operation
@@ -29,8 +28,8 @@ public class ServiciosWeb {
         }
         return volumen;
     }
-
-    /**
+    
+        /**
      * Web service operation
      */
     @WebMethod(operationName = "Login")
@@ -42,6 +41,5 @@ public class ServiciosWeb {
         return ingreso;
     }
 
-    
     
 }
