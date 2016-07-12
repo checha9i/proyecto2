@@ -12,6 +12,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
+import genericos.*;
+
 
 /**
  *
@@ -21,9 +23,6 @@ public class Nodo {
     public String id;//
     public String Fecha;
     public String Total;
-  
-    
- 
-    public ArrayList<String> RutaCancion=new ArrayList(); // lista de correo de las personas
-
+    public Usuario user;
+    public ColaDetalle.NodoCola Detalle;
 }
