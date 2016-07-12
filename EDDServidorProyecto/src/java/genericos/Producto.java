@@ -15,6 +15,22 @@ public class Producto {
     private String marca;
     private double precio;
     private String ruta;
+    
+    public Producto(String codigo, String nombre, String marca, String precio, String ruta){
+        try {
+            this.codigo = Long.parseLong(codigo);
+        } catch (Exception e) {
+            this.codigo = 1312312;
+        }
+        this.nombre = nombre;
+        this.marca = marca;
+        try {
+            this.precio = Double.parseDouble(precio);
+        } catch (Exception e) {
+            this.precio = 0.00;
+        }
+        this.ruta = ruta;
+    }
 
     public long getCodigo() {
         return codigo;
