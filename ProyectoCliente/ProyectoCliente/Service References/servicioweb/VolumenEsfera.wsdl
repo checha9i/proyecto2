@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://Volumen/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="VolumenEsfera" targetNamespace="http://Volumen/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/EDDServidorProyecto/VolumenEsfera?xsd=1" namespace="http://Volumen/" />
+    </xsd:schema>
+  </types>
+  <message name="Catalogo">
+    <part name="parameters" element="tns:Catalogo" />
+  </message>
+  <message name="CatalogoResponse">
+    <part name="parameters" element="tns:CatalogoResponse" />
+  </message>
+  <message name="ImagenesR">
+    <part name="parameters" element="tns:ImagenesR" />
+  </message>
+  <message name="ImagenesRResponse">
+    <part name="parameters" element="tns:ImagenesRResponse" />
+  </message>
+  <message name="Login">
+    <part name="parameters" element="tns:Login" />
+  </message>
+  <message name="LoginResponse">
+    <part name="parameters" element="tns:LoginResponse" />
+  </message>
+  <portType name="VolumenEsfera">
+    <operation name="Catalogo">
+      <input wsam:Action="http://Volumen/VolumenEsfera/CatalogoRequest" message="tns:Catalogo" />
+      <output wsam:Action="http://Volumen/VolumenEsfera/CatalogoResponse" message="tns:CatalogoResponse" />
+    </operation>
+    <operation name="ImagenesR">
+      <input wsam:Action="http://Volumen/VolumenEsfera/ImagenesRRequest" message="tns:ImagenesR" />
+      <output wsam:Action="http://Volumen/VolumenEsfera/ImagenesRResponse" message="tns:ImagenesRResponse" />
+    </operation>
+    <operation name="Login">
+      <input wsam:Action="http://Volumen/VolumenEsfera/LoginRequest" message="tns:Login" />
+      <output wsam:Action="http://Volumen/VolumenEsfera/LoginResponse" message="tns:LoginResponse" />
+    </operation>
+  </portType>
+  <binding name="VolumenEsferaPortBinding" type="tns:VolumenEsfera">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Catalogo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ImagenesR">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Login">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="VolumenEsfera">
+    <port name="VolumenEsferaPort" binding="tns:VolumenEsferaPortBinding">
+      <soap:address location="http://localhost:8080/EDDServidorProyecto/VolumenEsfera" />
+    </port>
+  </service>
+</definitions>

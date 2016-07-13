@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{37FEAE9C-A237-440F-80D6-9008FA574EED}</ProjectGuid>
+    <ProjectGuid>{C5B0585A-FA15-4E9D-96FB-174BB3C10264}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClienteEDDProyecto</RootNamespace>
-    <AssemblyName>ClienteEDDProyecto</AssemblyName>
+    <RootNamespace>ProyectoCliente</RootNamespace>
+    <AssemblyName>ProyectoCliente</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -144,14 +144,17 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Service References\servicioweb\ClienteEDDProyecto.servicioweb.CalcularVolumenEsferaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\servicioweb\ClienteEDDProyecto.servicioweb.LoginResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\servicioweb\configuration91.svcinfo" />
     <None Include="Service References\servicioweb\configuration.svcinfo" />
+    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.CatalogoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.ImagenesRResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\servicioweb\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -163,8 +166,8 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
-    <None Include="Service References\servicioweb\ServerAspWebService.wsdl" />
-    <None Include="Service References\servicioweb\ServerAspWebService.xsd">
+    <None Include="Service References\servicioweb\VolumenEsfera.wsdl" />
+    <None Include="Service References\servicioweb\VolumenEsfera.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">
@@ -255,9 +258,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>32011</DevelopmentServerPort>
+          <DevelopmentServerPort>39551</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:21804/</IISUrl>
+          <IISUrl>http://localhost:39551/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
