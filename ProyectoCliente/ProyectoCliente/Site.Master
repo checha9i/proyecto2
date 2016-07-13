@@ -1,4 +1,4 @@
-﻿<%@ master language="C#" autoeventwireup="true" codebehind="Site2.Master.cs" inherits="ClienteEDDProyecto.SiteMaster" %>
+﻿<%@ master language="C#" autoeventwireup="true" codebehind="Site.master.cs" inherits="ClienteEDDProyecto.SiteMaster" %>
 
 <!DOCTYPE html>
 
