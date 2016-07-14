@@ -11,7 +11,10 @@ namespace ProyectoCliente
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["log"] == "no") {
+                Server.Transfer("LogIn.aspx");
+            }
+            String user = Session["usuario"].ToString();
         }
     }
 }

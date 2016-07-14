@@ -143,6 +143,7 @@ public class Arbol {
         }
         return j;
     }
+    
 
     //Meter hoja
     public void MeterHoja(Nodo clave, Bnodo raiz, int k) {

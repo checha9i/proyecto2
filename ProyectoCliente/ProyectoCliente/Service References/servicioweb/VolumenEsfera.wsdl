@@ -5,17 +5,41 @@
       <xsd:import schemaLocation="http://localhost:8080/EDDServidorProyecto/VolumenEsfera?xsd=1" namespace="http://Volumen/" />
     </xsd:schema>
   </types>
+  <message name="dotcompras">
+    <part name="parameters" element="tns:dotcompras" />
+  </message>
+  <message name="dotcomprasResponse">
+    <part name="parameters" element="tns:dotcomprasResponse" />
+  </message>
+  <message name="carritodot">
+    <part name="parameters" element="tns:carritodot" />
+  </message>
+  <message name="carritodotResponse">
+    <part name="parameters" element="tns:carritodotResponse" />
+  </message>
+  <message name="agregarcarrito">
+    <part name="parameters" element="tns:agregarcarrito" />
+  </message>
+  <message name="agregarcarritoResponse">
+    <part name="parameters" element="tns:agregarcarritoResponse" />
+  </message>
+  <message name="comprar">
+    <part name="parameters" element="tns:comprar" />
+  </message>
+  <message name="comprarResponse">
+    <part name="parameters" element="tns:comprarResponse" />
+  </message>
   <message name="Catalogo">
     <part name="parameters" element="tns:Catalogo" />
   </message>
   <message name="CatalogoResponse">
     <part name="parameters" element="tns:CatalogoResponse" />
   </message>
-  <message name="ImagenesR">
-    <part name="parameters" element="tns:ImagenesR" />
+  <message name="agregarcompra">
+    <part name="parameters" element="tns:agregarcompra" />
   </message>
-  <message name="ImagenesRResponse">
-    <part name="parameters" element="tns:ImagenesRResponse" />
+  <message name="agregarcompraResponse">
+    <part name="parameters" element="tns:agregarcompraResponse" />
   </message>
   <message name="Login">
     <part name="parameters" element="tns:Login" />
@@ -24,13 +48,29 @@
     <part name="parameters" element="tns:LoginResponse" />
   </message>
   <portType name="VolumenEsfera">
+    <operation name="dotcompras">
+      <input wsam:Action="http://Volumen/VolumenEsfera/dotcomprasRequest" message="tns:dotcompras" />
+      <output wsam:Action="http://Volumen/VolumenEsfera/dotcomprasResponse" message="tns:dotcomprasResponse" />
+    </operation>
+    <operation name="carritodot">
+      <input wsam:Action="http://Volumen/VolumenEsfera/carritodotRequest" message="tns:carritodot" />
+      <output wsam:Action="http://Volumen/VolumenEsfera/carritodotResponse" message="tns:carritodotResponse" />
+    </operation>
+    <operation name="agregarcarrito">
+      <input wsam:Action="http://Volumen/VolumenEsfera/agregarcarritoRequest" message="tns:agregarcarrito" />
+      <output wsam:Action="http://Volumen/VolumenEsfera/agregarcarritoResponse" message="tns:agregarcarritoResponse" />
+    </operation>
+    <operation name="comprar">
+      <input wsam:Action="http://Volumen/VolumenEsfera/comprarRequest" message="tns:comprar" />
+      <output wsam:Action="http://Volumen/VolumenEsfera/comprarResponse" message="tns:comprarResponse" />
+    </operation>
     <operation name="Catalogo">
       <input wsam:Action="http://Volumen/VolumenEsfera/CatalogoRequest" message="tns:Catalogo" />
       <output wsam:Action="http://Volumen/VolumenEsfera/CatalogoResponse" message="tns:CatalogoResponse" />
     </operation>
-    <operation name="ImagenesR">
-      <input wsam:Action="http://Volumen/VolumenEsfera/ImagenesRRequest" message="tns:ImagenesR" />
-      <output wsam:Action="http://Volumen/VolumenEsfera/ImagenesRResponse" message="tns:ImagenesRResponse" />
+    <operation name="agregarcompra">
+      <input wsam:Action="http://Volumen/VolumenEsfera/agregarcompraRequest" message="tns:agregarcompra" />
+      <output wsam:Action="http://Volumen/VolumenEsfera/agregarcompraResponse" message="tns:agregarcompraResponse" />
     </operation>
     <operation name="Login">
       <input wsam:Action="http://Volumen/VolumenEsfera/LoginRequest" message="tns:Login" />
@@ -39,6 +79,42 @@
   </portType>
   <binding name="VolumenEsferaPortBinding" type="tns:VolumenEsfera">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="dotcompras">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="carritodot">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="agregarcarrito">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="comprar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="Catalogo">
       <soap:operation soapAction="" />
       <input>
@@ -48,7 +124,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="ImagenesR">
+    <operation name="agregarcompra">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
