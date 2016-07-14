@@ -1,7 +1,7 @@
 <%-- 
-    Document   : index
-    Created on : 29/10/2013, 10:17:51 PM
-    Author     : Aurora
+    Document   : reportes
+    Created on : Jul 14, 2016, 1:43:50 PM
+    Author     : David
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inicio</title>
+        <title>Reportes</title>
         <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -34,7 +34,7 @@
                             <a href="cargaDatos.jsp">Carga</a>
                         </li>
                         <li>
-                            <a href="reportes.jsp">Reportes</a>
+                            <a href="#">Reportes</a>
                         </li>
                     </ul>
                 </div>
@@ -47,17 +47,27 @@
         <div class="container">
                 <div class="page-wr">
                     <div class="row">
-                        <div class="col-lg-12 text-center jumbotron">
-                            <h1>Estructura de Datos - Proyecto #2</h1>
-                            <p class="lead">Datos:</p>
-                            <ul class="list-unstyled">
-                                <li>Carne: 201404007</li>
-                                <li>Nombre: David Alejandro Asencio Sagastume</li>
-                            </ul>
-                            <ul class="list-unstyled">
-                                <li>Carne: 201313819</li>
-                                <li>Nombre: Cesar Javier Solares Orozco</li>
-                            </ul>
+                        <div class="col-lg-10 col-lg-offset-1 jumbotron">
+                            <h1>Reportes de Datos</h1>
+                            <h4>Elija la estructura que desea graficar</h4>
+                            <br />
+                            <div class="row">
+                                <div class="col-lg-3 col-lg-offset-2">
+                                    <form action="usuarios.jsp" method="post">
+                                        <input type="submit" value="Usuarios" class="btn btn-success"/>
+                                    </form>
+                                </div>
+                                <div class="col-lg-3">
+                                    <form action="productos.jsp" method="post">
+                                        <input type="submit" value="Productos" class="btn btn-success"/>
+                                    </form>
+                                </div>
+                                <div class="col-lg-3">
+                                    <form action="ventas.jsp" method="post">
+                                        <input type="submit" value="Ventas" class="btn btn-success"/>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

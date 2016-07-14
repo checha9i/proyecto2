@@ -25,6 +25,11 @@ public class AVL {
         this.raiz = null;
     }
     
+    public boolean eliminar(int clave){
+        Nodo eliminado = remover(getRaiz(), clave);
+        return eliminado != null;
+    }
+    
     public Nodo remover(Nodo nodo, int clave){
         if(nodo == null){
             return null;
@@ -249,9 +254,9 @@ public class AVL {
             this.id = id;
             this.altura = 1;
             this.usuario = new Usuario();
-            this.direcciones = new ListaSimple();
-            this.compras = new Cola();
-            this.carrito = new Cola();
+            this.direcciones = new ListaSimple(id);
+            this.compras = new Cola(id);
+            this.carrito = new Cola(id);
         }
         
         private int toAscci(String palabra){

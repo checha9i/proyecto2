@@ -15,10 +15,12 @@ public class Cola {
     private Nodo primero;
     private Nodo ultimo;
     private int contadorId;
+    private int id;
     
-    public Cola(){
+    public Cola(int id){
         this.primero = this.ultimo = null;
         this.contadorId = 0;
+        this.id = id;
     }
     
     public void insertar(Nodo nuevo){
@@ -33,6 +35,33 @@ public class Cola {
     
     public Nodo crearNodo(Info dato){
         return new Nodo(dato, contadorId);
+    }
+    
+    public Nodo remover(Info dato){
+        Nodo retirado = null;
+        if(!isEmpty()){
+            retirado = getPrimero();
+            if(retirado.getDato() == dato){
+                if(getPrimero() == getUltimo()){
+                    setPrimero(null);
+                    setUltimo(null);
+                }
+            }else{
+                while(retirado.getSiguiente() != null){
+                    if(retirado.getSiguiente().getDato() == dato){
+                        Nodo temp = retirado.getSiguiente();
+                        Nodo siguiente = retirado.getSiguiente().getSiguiente();
+                        retirado.setSiguiente(siguiente);
+                        if(getUltimo() == temp){
+                            setUltimo(retirado);
+                        }//fin if
+                        return temp;
+                    }//fin if
+                    retirado = retirado.getSiguiente();
+                }//fin while
+            }//fin else
+        }//fin if
+        return retirado;
     }
     
     public Nodo remover(){
@@ -88,6 +117,14 @@ public class Cola {
 
     public void setContadorId(int contadorId) {
         this.contadorId = contadorId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     public class Nodo{

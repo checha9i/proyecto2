@@ -5,7 +5,6 @@
  */
 package estructuras.arbolB;
 
-import estructuras.*;
 import genericos.*;
 
 /**
