@@ -16,10 +16,12 @@ public class ListaSimple {
     private Nodo primero;
     private Nodo ultimo;
     private int contadorId;
+    private int id;
     
-    public ListaSimple(){
+    public ListaSimple(int id){
         this.primero = this.ultimo = null;
         this.contadorId = 0;
+        this.id = id;
     }
     
     public void insertar(Nodo nuevo){
@@ -94,6 +96,14 @@ public class ListaSimple {
 
     public void setContadorId(int contadorId) {
         this.contadorId = contadorId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     public class Nodo{

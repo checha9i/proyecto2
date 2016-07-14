@@ -9,11 +9,8 @@ package estructuras.arbolB;
  *
  * @author Usuario
  */
+import estructuras.Cola;
 import genericos.Usuario;
-import java.awt.Desktop;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -28,6 +25,11 @@ public class Arbol {
     public Bnodo Xr;
     public String salida = "", imps = "";
     public boolean EmpA = false, Esta = false;
+    public int contadorVentas = 1000;
+    
+    public void graficarArbol(){
+        Graficar graficar = new Graficar(this);
+    }
 
     public Nodo NodoExistente(Bnodo p, String correo) {
         Nodo i = null;
@@ -76,6 +78,18 @@ public class Arbol {
         }
         return i;
     }
+    
+    public void realizarCompra(Cola productosCarrito, Usuario usuario){
+        
+    }
+    
+    public void añadirVenta(){
+        
+    }//inserta una venta en el arbol
+    
+    public void añadirDetalle(){
+        
+    }//inserta un detalle en la venta
 
     public void insertar(Bnodo raiz, String id, String Fecha, String Total, ColaDetalle detalle, Usuario usuario) {
         Nodo c = new Nodo();
@@ -249,7 +263,6 @@ public class Arbol {
         }
     }
    
-
     public boolean ComparacionNombre(String raiz, String Nuevo) {
         boolean validar = false;
         if (raiz.length() > Nuevo.length()) {
@@ -286,8 +299,7 @@ public class Arbol {
 
         return validar;
     }
-
-    
+   
     public boolean BuscarDentro(String x) {
         boolean retorno = false;
         int i = 0;
@@ -393,10 +405,6 @@ public class Arbol {
         return envia;
     }
     
-    
-    
-    
-    
     public String Todo() {
         String envia = "";
         boolean retorno = false;
@@ -499,221 +507,8 @@ public class Arbol {
         System.out.println("Salen " + envia);
         return envia;
     }
-/*
-    public String TodoAno() {
-        String envia = "";
-        boolean retorno = false;
-        int i = 0;
-        Bnodo nodo = p;
-        ListaSimpleB Pila = new ListaSimpleB();
 
-        do {
-            i = 0;
-            while (!Vacio(nodo)) {
-                Pila.InsertaFinal(nodo, i);
-                nodo = nodo.Ramas[i];
-            }
-            if (!Pila.VaciaLista()) {
-                i = Pila.UltimoNodo.indice;
-                nodo = Pila.UltimoNodo.datos;
-                Pila.EliminaFinal();
-                i++;
-                if (i <= nodo.Cuentas) {
-                  
-                    envia = envia + "," + nodo.Claves[i - 1].Anio;
-                    System.out.println("imprime " + nodo.Claves[i - 1].id);
-                    // }
-
-                    if (i < nodo.Cuentas) {
-                        Pila.InsertaFinal(nodo, i);
-                    }
-                    nodo = nodo.Ramas[i];
-                }
-            }
-        } while (!Pila.VaciaLista() || !Vacio(nodo));
-        System.out.println("Salen " + envia);
-        return envia;
-    }
-
-    public String TodoGenero() {
-        String envia = "";
-        boolean retorno = false;
-        int i = 0;
-        Bnodo nodo = p;
-        ListaSimpleB Pila = new ListaSimpleB();
-
-        do {
-            i = 0;
-            while (!Vacio(nodo)) {
-                Pila.InsertaFinal(nodo, i);
-                nodo = nodo.Ramas[i];
-            }
-            if (!Pila.VaciaLista()) {
-                i = Pila.UltimoNodo.indice;
-                nodo = Pila.UltimoNodo.datos;
-                Pila.EliminaFinal();
-                i++;
-                if (i <= nodo.Cuentas) {
-                    envia = envia + "," + nodo.Claves[i - 1].Genero;
-                    System.out.println("imprime " + nodo.Claves[i - 1].id);
-                    // }
-
-                    if (i < nodo.Cuentas) {
-                        Pila.InsertaFinal(nodo, i);
-                    }
-                    nodo = nodo.Ramas[i];
-                }
-            }
-        } while (!Pila.VaciaLista() || !Vacio(nodo));
-        System.out.println("Salen " + envia);
-        return envia;
-    }
-  */  
-    /*
-      public String RutaImagenMusica() {
-        String envia = "";
-        boolean retorno = false;
-        int i = 0;
-        Bnodo nodo = p;
-        ListaSimpleB Pila = new ListaSimpleB();
-
-        do {
-            i = 0;
-            while (!Vacio(nodo)) {
-                Pila.InsertaFinal(nodo, i);
-                nodo = nodo.Ramas[i];
-            }
-            if (!Pila.VaciaLista()) {
-                i = Pila.UltimoNodo.indice;
-                nodo = Pila.UltimoNodo.datos;
-                Pila.EliminaFinal();
-                i++;
-                if (i <= nodo.Cuentas) {
-                    envia = envia + "," + nodo.Claves[i - 1].Archivo;
-                    System.out.println("imprime " + nodo.Claves[i - 1].id);
-                    // }
-
-                    if (i < nodo.Cuentas) {
-                        Pila.InsertaFinal(nodo, i);
-                    }
-                    nodo = nodo.Ramas[i];
-                }
-            }
-        } while (!Pila.VaciaLista() || !Vacio(nodo));
-        System.out.println("Salen " + envia);
-        return envia;
-    }
-    
-
-      public String RutaMusica() {
-        String envia = "";
-        boolean retorno = false;
-        int i = 0;
-        Bnodo nodo = p;
-        ListaSimpleB Pila = new ListaSimpleB();
-
-        do {
-            i = 0;
-            while (!Vacio(nodo)) {
-                Pila.InsertaFinal(nodo, i);
-                nodo = nodo.Ramas[i];
-            }
-            if (!Pila.VaciaLista()) {
-                i = Pila.UltimoNodo.indice;
-                nodo = Pila.UltimoNodo.datos;
-                Pila.EliminaFinal();
-                i++;
-                if (i <= nodo.Cuentas) {
-                    envia = envia + "," + nodo.Claves[i - 1].Archivo;
-                    //System.out.println("imprime " + nodo.Claves[i - 1].id);
-                    // }
-
-                    if (i < nodo.Cuentas) {
-                        Pila.InsertaFinal(nodo, i);
-                    }
-                    nodo = nodo.Ramas[i];
-                }
-            }
-        } while (!Pila.VaciaLista() || !Vacio(nodo));
-        System.out.println("Salen " + envia);
-        return envia;
-    }
-      
-      
-      
-      public String EstadoMusica() {
-        String envia = "";
-        boolean retorno = false;
-        int i = 0;
-        Bnodo nodo = p;
-        ListaSimpleB Pila = new ListaSimpleB();
-
-        do {
-            i = 0;
-            while (!Vacio(nodo)) {
-                Pila.InsertaFinal(nodo, i);
-                nodo = nodo.Ramas[i];
-            }
-            if (!Pila.VaciaLista()) {
-                i = Pila.UltimoNodo.indice;
-                nodo = Pila.UltimoNodo.datos;
-                Pila.EliminaFinal();
-                i++;
-                if (i <= nodo.Cuentas) {
-                    envia = envia + "," + nodo.Claves[i - 1].Estado;
-                    System.out.println("imprime " + nodo.Claves[i - 1].id);
-                    // }
-
-                    if (i < nodo.Cuentas) {
-                        Pila.InsertaFinal(nodo, i);
-                    }
-                    nodo = nodo.Ramas[i];
-                }
-            }
-        } while (!Pila.VaciaLista() || !Vacio(nodo));
-        System.out.println("Salen " + envia);
-        return envia;
-    }
-      
-      
-      
-        public String Descargableee() {
-        String envia = "";
-        boolean retorno = false;
-        int i = 0;
-        Bnodo nodo = p;
-        ListaSimpleB Pila = new ListaSimpleB();
-
-        do {
-            i = 0;
-            while (!Vacio(nodo)) {
-                Pila.InsertaFinal(nodo, i);
-                nodo = nodo.Ramas[i];
-            }
-            if (!Pila.VaciaLista()) {
-                i = Pila.UltimoNodo.indice;
-                nodo = Pila.UltimoNodo.datos;
-                Pila.EliminaFinal();
-                i++;
-                if (i <= nodo.Cuentas) {
-                    envia = envia + "," + nodo.Claves[i - 1].Ruta;
-                    System.out.println("imprime " + nodo.Claves[i - 1].id);
-                    // }
-
-                    if (i < nodo.Cuentas) {
-                        Pila.InsertaFinal(nodo, i);
-                    }
-                    nodo = nodo.Ramas[i];
-                }
-            }
-        } while (!Pila.VaciaLista() || !Vacio(nodo));
-        System.out.println("Salen " + envia);
-        return envia;
-    }
-      
-    
-      */
-       public String BUSCARparaMODIFICAR(String x) {
+    public String BUSCARparaMODIFICAR(String x) {
         String envia = "";
         boolean retorno = false;
         int i = 0;

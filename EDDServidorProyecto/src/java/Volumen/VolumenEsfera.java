@@ -42,7 +42,7 @@ public class VolumenEsfera {
      * Web service operation
      */
     @WebMethod(operationName = "carritodot")
-    public String carritodot() {
+    public String carritodot(String usuario) {
         //TODO write your implementation code here:
         return null;
     }
@@ -51,7 +51,7 @@ public class VolumenEsfera {
      * Web service operation
      */
     @WebMethod(operationName = "dotcompras")
-    public String dotcompras() {
+    public String dotcompras(String usuario) {
         //TODO write your implementation code here:
         return null;
     }
