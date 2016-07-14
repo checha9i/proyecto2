@@ -76,7 +76,7 @@ public class Graficar {
     public String CrearNodoPadre(Bnodo p) {
         String ccc = "nodo0 [ label =\" ";
         int cue = 1;
-String enlaces="";
+        String enlaces="";
         for (Nodo i : p.Claves) {
             if (i != null) {
                 if (cue == p.Cuentas) {

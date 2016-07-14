@@ -35,6 +35,33 @@ public class Cola {
         return new Nodo(dato, contadorId);
     }
     
+    public Nodo remover(Info dato){
+        Nodo retirado = null;
+        if(!isEmpty()){
+            retirado = getPrimero();
+            if(retirado.getDato() == dato){
+                if(getPrimero() == getUltimo()){
+                    setPrimero(null);
+                    setUltimo(null);
+                }
+            }else{
+                while(retirado.getSiguiente() != null){
+                    if(retirado.getSiguiente().getDato() == dato){
+                        Nodo temp = retirado.getSiguiente();
+                        Nodo siguiente = retirado.getSiguiente().getSiguiente();
+                        retirado.setSiguiente(siguiente);
+                        if(getUltimo() == temp){
+                            setUltimo(retirado);
+                        }//fin if
+                        return temp;
+                    }//fin if
+                    retirado = retirado.getSiguiente();
+                }//fin while
+            }//fin else
+        }//fin if
+        return retirado;
+    }
+    
     public Nodo remover(){
         Nodo retirado = null;
         if(!isEmpty()){

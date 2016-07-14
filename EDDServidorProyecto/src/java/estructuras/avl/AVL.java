@@ -25,6 +25,11 @@ public class AVL {
         this.raiz = null;
     }
     
+    public boolean eliminar(int clave){
+        Nodo eliminado = remover(getRaiz(), clave);
+        return eliminado != null;
+    }
+    
     public Nodo remover(Nodo nodo, int clave){
         if(nodo == null){
             return null;

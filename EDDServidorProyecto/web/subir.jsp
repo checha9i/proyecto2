@@ -32,12 +32,12 @@
                 String path = getServletContext().getRealPath("") + File.separator + "uploads";
                 
                 File archivo_server = new File(path + File.separator + item.getName());
-                /*y lo escribimos en el servido*/
+                /*y lo escribimos en el servidor*/
                 item.write(archivo_server);
-                out.print("Nombre --> " + item.getName() );
+                /*out.print("Nombre --> " + item.getName() );
                 out.print("<br> Tipo --> " + item.getContentType());
                 out.print("<br> tamaño --> " + (item.getSize()/1240)+ "KB");
-                out.print("<br>");
+                out.print("<br>");*/
                 
                 try{
                     FileReader fr = new FileReader(archivo_server);
@@ -52,6 +52,8 @@
                 }catch(Exception e){
                     
                 }
+                
+                response.sendRedirect("cargaDatos.jsp");
                 
             }
         }
