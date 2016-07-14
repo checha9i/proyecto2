@@ -13,13 +13,21 @@ namespace ProyectoCliente
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["usuario"] = "";
+            Session["log"] = "no";
         }
         protected void Login(object sender, EventArgs e)
         {
             String user = User.ToString(), pass = Password.ToString();
-            if (proxy.Login(user, pass) == "Ingreso")
+            //if (proxy.Login(user, pass) == "Ingreso")
+            if(true)
             {
-                Server.Transfer("About.aspx");
+                Session["usuario"] = user;
+                Session["log"] = "si";
+                Server.Transfer("Catalogo.aspx");
+
+            }
+            else { 
+            
             }
         }
 

@@ -153,10 +153,22 @@
     <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.CatalogoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.ImagenesRResponse.datasource">
+    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.LoginResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.LoginResponse.datasource">
+    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.agregarcarritoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.agregarcompraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.carritodotResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.comprarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.dotcomprasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\servicioweb\Reference.svcmap">

@@ -14,6 +14,11 @@ namespace ProyectoCliente
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["log"] == "no")
+            {
+                Server.Transfer("LogIn.aspx");
+            }
+            String user = Session["usuario"].ToString();
             Label1.Text=(datoCliente.indice+1)+"";
             datoCliente.getCatalogo();
             Producto[] productos = null;
@@ -67,6 +72,11 @@ namespace ProyectoCliente
             if (indice < datoCliente.Productos.Count - 1) {
                 datoCliente.indice++;
             }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            proxy.agregarcarrito(Session["usuario"].ToString(), int.Parse(cantidad.Text), long.Parse(Codigo.Text));
         }
 
         

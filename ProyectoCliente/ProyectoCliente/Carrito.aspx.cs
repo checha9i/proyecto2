@@ -12,6 +12,11 @@ namespace ProyectoCliente
         servicioweb.VolumenEsferaClient proxy = new servicioweb.VolumenEsferaClient();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["log"] == "no")
+            {
+                Server.Transfer("LogIn.aspx");
+            }
+            String user = Session["usuario"].ToString();
             String dot = "digraph {n1->n2;}";
             graficar(dot);
          
