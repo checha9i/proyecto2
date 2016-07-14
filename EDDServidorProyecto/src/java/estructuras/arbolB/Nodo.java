@@ -24,5 +24,5 @@ public class Nodo {
     public String Fecha;
     public String Total;
     public Usuario user;
-    public ColaDetalle.NodoCola Detalle;
+    public ColaDetalle Detalle;
 }

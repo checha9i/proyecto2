@@ -41,11 +41,38 @@ public class VolumenEsfera {
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "ImagenesR")
-    public String ImagenesR() {
+    @WebMethod(operationName = "carritodot")
+    public String carritodot() {
         //TODO write your implementation code here:
         return null;
     }
 
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "dotcompras")
+    public String dotcompras() {
+        //TODO write your implementation code here:
+        return null;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "agregarcarrito")
+    public void agregarcarrito(String user,int cantidad,long codigo) {
+        //TODO write your implementation code here:
+       
+    }
     
+    @WebMethod(operationName = "agregarcompra")
+    public void agregarcompra(String user,int cantidad,long codigo) {
+        //TODO write your implementation code here:
+       
+    }    
+        @WebMethod(operationName = "comprar")
+    public void comprar(String usuario) {
+        //TODO write your implementation code here:
+       
+    }   
 }
