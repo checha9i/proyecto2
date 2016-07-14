@@ -9,6 +9,7 @@ package estructuras.arbolB;
  *
  * @author Usuario
  */
+import genericos.Usuario;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileWriter;
@@ -76,13 +77,14 @@ public class Arbol {
         return i;
     }
 
-    public void insertar(Bnodo raiz, String id, String Fecha, String Total) {
+    public void insertar(Bnodo raiz, String id, String Fecha, String Total, ColaDetalle detalle, Usuario usuario) {
         Nodo c = new Nodo();
         c.id = id;
      
         c.Fecha = Fecha;
         c.Total = Total;
-      
+        c.user = usuario;
+        c.Detalle = detalle;
         
         
         Empujar(c, raiz);

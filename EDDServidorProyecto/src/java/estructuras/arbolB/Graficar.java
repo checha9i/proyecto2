@@ -74,18 +74,23 @@ public class Graficar {
     }
 
     public String CrearNodoPadre(Bnodo p) {
-        String ccc = "nodo0 [ label =\"";
+        String ccc = "nodo0 [ label =\" ";
         int cue = 1;
+String enlaces="";
         for (Nodo i : p.Claves) {
             if (i != null) {
                 if (cue == p.Cuentas) {
-                    ccc += i.id;
+                    ccc += "<f"+i.id+">"+i.id+"\\n"+i.Fecha+"\\n"+i.Total+"\\n"+i.user.getNickname();
                 } else {
-                    ccc += i.id + "|";
+                    ccc +="<f"+i.id+">"+ i.id+"\\n"+i.Fecha+"\\n"+i.Total+"\\n"+i.user.getNickname() + "|";
                 }
+                enlaces += "nodo0:f"+i.id+"->node"+i.Detalle.getPrimero().getId()+";";
+                enlaces += i.Detalle.getDot();
             }
+        
         }
         ccc += "\"];\n";
+        ccc +=enlaces;
         int n = 0;
         for (Bnodo i : p.Ramas) {
             if (i != null) {
@@ -101,18 +106,23 @@ public class Graficar {
     public String CrearNodo(String padre, String actual, Bnodo p) {
         String ccc = "nodo" + padre + actual + " [ label =\"";
         int cue = 1;
+        String enlaces="";
         for (Nodo i : p.Claves) {
             if (i != null) {
                 if (cue == p.Cuentas) {
-                    ccc += i.id;
+                    ccc += "<f"+i.id+">"+i.id+"\\n"+i.Fecha+"\\n"+i.Total+"\\n"+i.user.getNickname();
                 } else {
-                    ccc += i.id + "|";
+                    ccc +="<f"+i.id+">"+ i.id+"\\n"+i.Fecha+"\\n"+i.Total+"\\n"+i.user.getNickname() + "|";
                 }
+                enlaces += "nodo0:f"+i.id+"->node"+i.Detalle.getPrimero().getId()+";";
+                enlaces += i.Detalle.getDot();
             }
             cue++;
         }
         ccc += "\"];\n";
+        ccc += enlaces;
         ccc += "nodo" + padre + "->" + "nodo" + padre + actual + ";\n";
+        
         int n = 0;
         for (Bnodo i : p.Ramas) {
             if (i != null) {

@@ -16,10 +16,12 @@ public class ColaDetalle {
     private NodoCola primero;
     private NodoCola ultimo;
     private int contadorId;
+    private int id;
     
-    public ColaDetalle(){
+    public ColaDetalle(int id){
         this.primero = this.ultimo = null;
         this.contadorId = 0;
+        this.id = id;
     }
     
     public void insertar(NodoCola nuevo){
@@ -54,9 +56,9 @@ public class ColaDetalle {
         String dot = "\nnode [shape=record];\n";
         NodoCola actual = getPrimero();
         while(actual != null){
-            dot += "node" + actual.getId() + "[label=\"" + "cantidad:"+actual.cantidad+" \n precio:"+actual.precio+" \n producto:"+actual.producto.getNombre() + "\"];\n";
+            dot += "node" + getId() + actual.getId() + "[label=\"" + "cantidad:"+actual.cantidad+" \n precio:"+actual.precio+" \n producto:"+actual.producto.getNombre() + "\"];\n";
             if(actual.getSiguiente() != null){
-                dot += "node" + actual.getId() + " -> node" + actual.getSiguiente().getId() + ";\n";
+                dot += "node" + getId() + actual.getId() + " -> node" + getId() + actual.getSiguiente().getId() + ";\n";
             }//fin if
             actual = actual.getSiguiente();
         }//fin while
@@ -89,6 +91,14 @@ public class ColaDetalle {
 
     public void setContadorId(int contadorId) {
         this.contadorId = contadorId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     public class NodoCola{
