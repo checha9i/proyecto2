@@ -34,7 +34,7 @@
                             <a href="cargaDatos.jsp">Carga</a>
                         </li>
                         <li>
-                            <a href="#">Reportes</a>
+                            <a href="reportes.jsp">Reportes</a>
                         </li>
                     </ul>
                 </div>
@@ -52,7 +52,7 @@
                             <h4>Elija la estructura que desea graficar</h4>
                             <br />
                             <div class="row">
-                                <div class="col-lg-3 col-lg-offset-2">
+                                <div class="col-lg-3">
                                     <form action="usuarios.jsp" method="post">
                                         <input type="submit" value="Usuarios" class="btn btn-success"/>
                                     </form>
@@ -65,6 +65,11 @@
                                 <div class="col-lg-3">
                                     <form action="ventas.jsp" method="post">
                                         <input type="submit" value="Ventas" class="btn btn-success"/>
+                                    </form>
+                                </div>
+                                <div class="col-lg-3">
+                                    <form action="completo.jsp" method="post">
+                                        <input type="submit" value="Completo" class="btn btn-success"/>
                                     </form>
                                 </div>
                             </div>

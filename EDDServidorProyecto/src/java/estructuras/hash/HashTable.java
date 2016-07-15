@@ -38,11 +38,10 @@ public class HashTable {
             for (int i = 0; i < getTabla().length; i++) {
                 if (getTabla()[i] != null) {
                     datos += getTabla()[i].getDatos();
-                    if(i != getTabla().length - 1){
-                        datos += "%";
-                    }//fin if
+                    datos += "%";
                 }//fin if
             }//fin for
+            datos = datos.substring(0, datos.length() - 1);
             return datos;
         }
         return null;
