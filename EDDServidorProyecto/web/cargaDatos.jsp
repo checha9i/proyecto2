@@ -34,7 +34,7 @@
                             <a href="cargaDatos.jsp">Carga</a>
                         </li>
                         <li>
-                            <a href="#">Reportes</a>
+                            <a href="reportes.jsp">Reportes</a>
                         </li>
                     </ul>
                 </div>

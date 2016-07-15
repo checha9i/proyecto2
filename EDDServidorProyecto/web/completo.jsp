@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ventas
-    Created on : Jul 14, 2016, 1:50:43 PM
+    Document   : completo
+    Created on : Jul 14, 2016, 6:58:49 PM
     Author     : David
 --%>
 
@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Reporte de Ventas</title>
+        <title>Reporte de Datos</title>
         <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -52,18 +52,23 @@
                 <div class="page-wr">
                     <div class="row">
                         <div class="col-lg-10 col-lg-offset-1 jumbotron">
-                            <h1>Reportes de Ventas</h1>
+                            <h1>Reportes de Datos</h1>
                             <br />
                             <div class="row">
                                 <%
                                     String grafo = "digraph g{";
-                                    grafo += datoServer.VENTAS.getDot();
+                                    grafo += "\nsubgraph cluster1{";
+                                    grafo += datoServer.USUARIOS.getDot();
+                                    grafo += "}\n";
+                                    grafo += "\nsubgraph cluster2{";
+                                    grafo += datoServer.PRODUCTOS.getDot();
+                                    grafo += "}\n";
                                     grafo += "}";
                                     
                                     String path = getServletContext().getRealPath("") + File.separator + "uploads";
                                     
                                     try{
-                                        File archivo = new File("uploads"+ File.separator + "ventas.txt");
+                                        File archivo = new File("uploads"+ File.separator + "datos.txt");
                                         FileWriter fw = new FileWriter(archivo);
                                         BufferedWriter bw = new BufferedWriter(fw);
                                         bw.write(grafo);
@@ -74,8 +79,8 @@
                                     try {
 
                                     String dotPath = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe";
-                                    String fileInputPath = path + File.separator + "ventas.txt";
-                                    String fileOutputPath = path + File.separator + "ventas.jpg";
+                                    String fileInputPath = path + File.separator + "datos.txt";
+                                    String fileOutputPath = path + File.separator + "datos.jpg";
                                     String tParam = "-Tjpg";
                                     String tOParam = "-o";
 
@@ -89,7 +94,7 @@
                                     Runtime rt = Runtime.getRuntime();
                                     rt.exec(cmd);
                                     } catch (Exception ex) {}
-                                    out.print("<img src=\"" + request.getContextPath() + File.separator + "uploads" + File.separator + "ventas.jpg" + "\">");
+                                    out.print("<img src=\"" + request.getContextPath() + File.separator + "uploads" + File.separator + "datos.jpg" + "\">");
                                 %>
                             </div>
                         </div>
