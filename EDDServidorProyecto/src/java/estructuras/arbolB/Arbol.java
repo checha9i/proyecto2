@@ -26,6 +26,7 @@ public class Arbol {
     public String salida = "", imps = "";
     public boolean EmpA = false, Esta = false;
     public int contadorVentas = 1000;
+    public ListaVentas ventas = new ListaVentas(0);
     
     public String getDot(){
         Graficar graficar = new Graficar();
@@ -84,13 +85,49 @@ public class Arbol {
         
     }
     
-    public void añadirVenta(){
+    public void añadirVenta(String numero, String fecha, String totalS, String nickname){
+        double total;
         
+        try {
+            total = Double.parseDouble(totalS);
+        } catch (Exception e) {
+            total = 0.00;
+        }
+        ventas.insertarVenta(numero, fecha, total, nickname);
     }//inserta una venta en el arbol
     
-    public void añadirDetalle(){
+    public void añadirDetalle(String numero, String cantidadS, String precioS, String codigoS){
+        int cantidad;
+        double precio;
+        long codigo;
         
+        try {
+            cantidad = Integer.parseInt(cantidadS);
+        } catch (Exception e) {
+            cantidad = 0;
+        }
+        
+        try {
+            precio = Double.parseDouble(precioS);
+        } catch (Exception e) {
+            precio = 0.00;
+        }
+        
+        try {
+            codigo = Long.parseLong(codigoS);
+        } catch (Exception e) {
+            codigo = 0;
+        }
+        ventas.insertarDetalle(numero,cantidad,precio, codigo);
     }//inserta un detalle en la venta
+    
+    public void actualizarVentas(){
+        ListaVentas.Nodo nodo;
+        while(!ventas.isEmpty()){
+            nodo = ventas.remover();
+            insertar(p, nodo.getNumero(), nodo.getFecha(), nodo.getPrecio()+"", nodo.getDetalle(), nodo.getUsuario());
+        } 
+    }
 
     public void insertar(Bnodo raiz, String id, String Fecha, String Total, ColaDetalle detalle, Usuario usuario) {
         Nodo c = new Nodo();
@@ -228,7 +265,7 @@ public class Arbol {
                 if (i <= nodo.Cuentas) {
                     salida = salida + "Num ID: " + nodo.Claves[i - 1].id + "\n";
                     
-                    salida = salida + "-------------------------------\n";
+                    salida = salida + "------------------------------\n";
                     if (i < nodo.Cuentas) {
                         Pila.InsertaFinal(nodo, i);
                     }

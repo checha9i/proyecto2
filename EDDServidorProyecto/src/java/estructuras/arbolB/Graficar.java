@@ -20,7 +20,7 @@ public class Graficar {
     }
     
     public String getDot(Arbol b){
-        String codigo = "rankdir=TB;\nnode\n[shape = record, style=filled, fillcolor=steelblue1];\n";
+        String codigo = "rankdir=TB;\nnode\n[shape = record];\n";
         codigo += CrearNodoPadre(b.p);
         //Arbol.LineasGrafico.add(codigo);
         return codigo;
@@ -95,7 +95,7 @@ public class Graficar {
                 } else {
                     ccc +="<f"+i.id+">"+ i.id+"\\n"+i.Fecha+"\\n"+i.Total+"\\n"+i.user.getNickname() + "|";
                 }
-                enlaces += "nodo0:f"+i.id+"->node"+i.Detalle.getPrimero().getId()+";";
+                enlaces += "nodo0:f"+i.id+"->node"+ i.Detalle.getId() +i.Detalle.getPrimero().getId() +";";
                 enlaces += i.Detalle.getDot();
             }
         
@@ -125,7 +125,7 @@ public class Graficar {
                 } else {
                     ccc +="<f"+i.id+">"+ i.id+"\\n"+i.Fecha+"\\n"+i.Total+"\\n"+i.user.getNickname() + "|";
                 }
-                enlaces += "nodo0:f"+i.id+"->node"+i.Detalle.getPrimero().getId()+";";
+                enlaces += "nodo"+ padre + actual +":f"+i.id+"->node"+i.Detalle.getId()+i.Detalle.getPrimero().getId()+";";
                 enlaces += i.Detalle.getDot();
             }
             cue++;

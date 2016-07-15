@@ -57,11 +57,18 @@ public class datoServer {
                     }
                     break;
                 case "Venta":
+                    if(parametros.length == 4){
+                        VENTAS.añadirVenta(parametros[0], parametros[1], parametros[2], parametros[3]);
+                    }
                     break;
                 case "Detalle":
+                    if(parametros.length == 4){
+                        VENTAS.añadirDetalle(parametros[0], parametros[1], parametros[2], parametros[3]);
+                    }
                     break;
             }//fin switch
         }//fin for
+        VENTAS.actualizarVentas();
     }
     
 }
