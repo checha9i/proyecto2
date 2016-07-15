@@ -10,8 +10,10 @@ package estructuras.arbolB;
  * @author Usuario
  */
 import estructuras.Cola;
+import estructuras.detalle.InfoCompras;
 import genericos.Usuario;
 import java.util.ArrayList;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 
 public class Arbol {
@@ -25,7 +27,7 @@ public class Arbol {
     public Bnodo Xr;
     public String salida = "", imps = "";
     public boolean EmpA = false, Esta = false;
-    public int contadorVentas = 1000;
+    public int contadorVentas = 9000;
     public ListaVentas ventas = new ListaVentas(0);
     
     public String getDot(){
@@ -82,7 +84,23 @@ public class Arbol {
     }
     
     public void realizarCompra(Cola productosCarrito, Usuario usuario){
-        
+        double total = 0;
+        String fecha = Calendar.DATE + "/" + Calendar.MONTH + "/" + Calendar.YEAR;
+        Cola.Nodo actual = productosCarrito.getPrimero();
+        while(actual != null){
+            InfoCompras datos = (InfoCompras)actual.getDato();
+            try {
+                total += datos.getProducto().getPrecio();
+            } catch (Exception e) {}
+            actual = actual.getSiguiente();
+        }//fin while
+        ColaDetalle detalle = new ColaDetalle(contadorVentas);
+        while(!productosCarrito.isEmpty()){
+            actual = productosCarrito.remover();
+            InfoCompras datos = (InfoCompras)actual.getDato();
+            detalle.insertar(detalle.crearNodo(datos.getCantidad(), total, datos.getProducto()));
+        }//fin while
+        insertar(p, contadorVentas+"", fecha, total+"", detalle, usuario);
     }
     
     public void añadirVenta(String numero, String fecha, String totalS, String nickname){
