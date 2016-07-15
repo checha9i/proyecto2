@@ -7,20 +7,18 @@
         <table style="width:100%;">
             <tr>
                 <td style="width: 656px">&nbsp;</td>
-                <td>Ingrese Codigo del Producto</td>
+                <td>&nbsp;</td>
                 <td>
-                    <asp:TextBox ID="Codigo" runat="server"></asp:TextBox>
-                </td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td style="width: 656px">
                     <asp:Table ID="Table1" runat="server"  BorderStyle="Dotted" CellPadding="10">
                     </asp:Table>
                 </td>
-                <td>Ingrese cantidad</td>
+                <td>&nbsp;</td>
                 <td>
-                    <asp:TextBox ID="cantidad" runat="server"></asp:TextBox>
-                </td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td style="width: 656px">
@@ -29,30 +27,49 @@
                     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                 </td>
                 <td>
-                    <asp:Button ID="Button1" runat="server" ForeColor="Black" OnClick="Button1_Click" Text="Agregar a Carrito" />
-                </td>
+                    &nbsp;</td>
                 <td>
-                    <asp:Button ID="Button2" runat="server" ForeColor="Black" Text="Por Comprar" />
-                </td>
+                    &nbsp;</td>
             </tr>
             <tr>
-                <td style="width: 656px">
-                    &nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td style="width: 656px; height: 20px;">
+                    </td>
+                <td style="height: 20px">&nbsp;</td>
+                <td style="height: 20px"></td>
             </tr>
             
             <tr>
-                <td style="width: 656px">
+                <td>&nbsp;</td>
+                <td>Ingrese Codigo del Producto</td>
+                <td>
+                    <asp:TextBox ID="Codigo" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>&nbsp;</td>
+                <td>Ingrese cantidad</td>
+                <td>
+                    <asp:TextBox ID="cantidad" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
                     &nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Button ID="Button1" runat="server" ForeColor="Black" OnClick="Button1_Click" Text="Agregar a Carrito" />
+                </td>
+                <td>
+                    <asp:Button ID="Button2" runat="server" ForeColor="Black" Text="Por Comprar" OnClick="Button2_Click" />
+                </td>
             </tr>
             <tr>
-                <td style="width: 656px">
-                    &nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td style="height: 20px">&nbsp;</td>
+                <td style="height: 20px">
+                    <asp:Label ID="AgregoA" runat="server"></asp:Label>
+                </td>
+                <td style="height: 20px"></td>
             </tr>
         </table>
     </p>
