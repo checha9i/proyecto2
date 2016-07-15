@@ -16,6 +16,10 @@ public class Producto {
     private double precio;
     private String ruta;
     
+    public String getDatos(){
+        return codigo + "," + nombre + "," + marca + "," + precio + "," + ruta;
+    }
+    
     public Producto(String codigo, String nombre, String marca, String precio, String ruta){
         try {
             this.codigo = Long.parseLong(codigo);

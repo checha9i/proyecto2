@@ -15,6 +15,17 @@ import java.io.PrintWriter;
 
 public class Graficar {
 
+    public Graficar(){
+        //constructor Vacio
+    }
+    
+    public String getDot(Arbol b){
+        String codigo = "rankdir=TB;\nnode\n[shape = record, style=filled, fillcolor=steelblue1];\n";
+        codigo += CrearNodoPadre(b.p);
+        //Arbol.LineasGrafico.add(codigo);
+        return codigo;
+    }
+    
     public Graficar(Arbol b) {
         String codigo = "digraph grafica{\n"
                 + "rankdir=TB;\n"

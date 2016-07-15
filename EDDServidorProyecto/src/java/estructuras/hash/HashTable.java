@@ -23,6 +23,42 @@ public class HashTable {
         tabla = new Producto[this.tamaño];
     }
     
+    private boolean isEmpty(){
+        for (int i = 0; i < getTabla().length; i++) {
+                if (getTabla()[i] != null) {
+                    return false;
+                }//fin if
+            }//fin for
+        return true;
+    }
+    
+    public String getCatalogo(){
+        String datos = "";
+        if(!isEmpty()){
+            for (int i = 0; i < getTabla().length; i++) {
+                if (getTabla()[i] != null) {
+                    datos += getTabla()[i].getDatos();
+                    if(i != getTabla().length - 1){
+                        datos += "%";
+                    }//fin if
+                }//fin if
+            }//fin for
+            return datos;
+        }
+        return null;
+    }
+    
+    public Producto buscar(long codigo){
+        for(int i = 0; i < getTabla().length; i++){
+           if(getTabla()[i] != null){
+               if (getTabla()[i].getCodigo() == codigo) {
+                   return getTabla()[i];
+               }//fin if
+           }//fin if
+        }//fin for
+        return null;
+    }
+    
     public boolean eliminar(Producto producto){
         for(int i = 0; i < getTabla().length; i++){
             if(getTabla()[i] == producto){
@@ -61,7 +97,9 @@ public class HashTable {
     }
     
     private void verificarCarga(){ //verifica el factor de carga para evaluar si hay necesidad de un rehash
-        double factorCarga =  getNumeroInserciones() / getTamaño();
+        double inserciones = getNumeroInserciones();
+        double tamaño = getTamaño();
+        double factorCarga =  inserciones / tamaño;
         if(factorCarga > 0.6){
             reHash();
         }//fin if
