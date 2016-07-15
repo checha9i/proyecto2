@@ -25,14 +25,14 @@ namespace ClienteProyect2
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-        //    proxy.AgregarACarritoDesdeCompras(Session["usuario"].ToString());
+            proxy.AgregarACarritoDesdeCompras(Session["usuario"].ToString());
             
 
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-          //  proxy.limpiarporcomprar(Session["usuario"].ToString());
+           proxy.limpiarporcomprar(Session["usuario"].ToString());
         }
 
         public void graficar(String dot)

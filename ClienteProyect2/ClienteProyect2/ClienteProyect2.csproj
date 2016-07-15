@@ -148,19 +148,10 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Service References\servicioweb\ClienteProyect2.servicioweb.agregarcarritoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\servicioweb\ClienteProyect2.servicioweb.agregarcompraResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\servicioweb\ClienteProyect2.servicioweb.carritodotResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\servicioweb\ClienteProyect2.servicioweb.CatalogoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\servicioweb\ClienteProyect2.servicioweb.comprarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\servicioweb\ClienteProyect2.servicioweb.dotcomprasResponse.datasource">
