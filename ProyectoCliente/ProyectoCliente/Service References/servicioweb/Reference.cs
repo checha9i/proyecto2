@@ -16,32 +16,18 @@ namespace ProyectoCliente.servicioweb {
     public interface VolumenEsfera {
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg0 del espacio de nombres  no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/dotcomprasRequest", ReplyAction="http://Volumen/VolumenEsfera/dotcomprasResponse")]
-        ProyectoCliente.servicioweb.dotcomprasResponse dotcompras(ProyectoCliente.servicioweb.dotcomprasRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/agregarcarritoRequest", ReplyAction="http://Volumen/VolumenEsfera/agregarcarritoResponse")]
+        ProyectoCliente.servicioweb.agregarcarritoResponse agregarcarrito(ProyectoCliente.servicioweb.agregarcarritoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/dotcomprasRequest", ReplyAction="http://Volumen/VolumenEsfera/dotcomprasResponse")]
-        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.dotcomprasResponse> dotcomprasAsync(ProyectoCliente.servicioweb.dotcomprasRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/agregarcarritoRequest", ReplyAction="http://Volumen/VolumenEsfera/agregarcarritoResponse")]
+        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.agregarcarritoResponse> agregarcarritoAsync(ProyectoCliente.servicioweb.agregarcarritoRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg0 del espacio de nombres  no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/carritodotRequest", ReplyAction="http://Volumen/VolumenEsfera/carritodotResponse")]
-        ProyectoCliente.servicioweb.carritodotResponse carritodot(ProyectoCliente.servicioweb.carritodotRequest request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento User del espacio de nombres  no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/LoginRequest", ReplyAction="http://Volumen/VolumenEsfera/LoginResponse")]
+        ProyectoCliente.servicioweb.LoginResponse Login(ProyectoCliente.servicioweb.LoginRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/carritodotRequest", ReplyAction="http://Volumen/VolumenEsfera/carritodotResponse")]
-        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.carritodotResponse> carritodotAsync(ProyectoCliente.servicioweb.carritodotRequest request);
-        
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg0 del espacio de nombres  no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://Volumen/VolumenEsfera/agregarcarrito")]
-        void agregarcarrito(ProyectoCliente.servicioweb.agregarcarrito request);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://Volumen/VolumenEsfera/agregarcarrito")]
-        System.Threading.Tasks.Task agregarcarritoAsync(ProyectoCliente.servicioweb.agregarcarrito request);
-        
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg0 del espacio de nombres  no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://Volumen/VolumenEsfera/comprar")]
-        void comprar(ProyectoCliente.servicioweb.comprar request);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://Volumen/VolumenEsfera/comprar")]
-        System.Threading.Tasks.Task comprarAsync(ProyectoCliente.servicioweb.comprar request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/LoginRequest", ReplyAction="http://Volumen/VolumenEsfera/LoginResponse")]
+        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.LoginResponse> LoginAsync(ProyectoCliente.servicioweb.LoginRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento return del espacio de nombres  no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/CatalogoRequest", ReplyAction="http://Volumen/VolumenEsfera/CatalogoResponse")]
@@ -51,190 +37,47 @@ namespace ProyectoCliente.servicioweb {
         System.Threading.Tasks.Task<ProyectoCliente.servicioweb.CatalogoResponse> CatalogoAsync(ProyectoCliente.servicioweb.CatalogoRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg0 del espacio de nombres  no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://Volumen/VolumenEsfera/agregarcompra")]
-        void agregarcompra(ProyectoCliente.servicioweb.agregarcompra request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/dotcomprasRequest", ReplyAction="http://Volumen/VolumenEsfera/dotcomprasResponse")]
+        ProyectoCliente.servicioweb.dotcomprasResponse dotcompras(ProyectoCliente.servicioweb.dotcomprasRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://Volumen/VolumenEsfera/agregarcompra")]
-        System.Threading.Tasks.Task agregarcompraAsync(ProyectoCliente.servicioweb.agregarcompra request);
-        
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento User del espacio de nombres  no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/LoginRequest", ReplyAction="http://Volumen/VolumenEsfera/LoginResponse")]
-        ProyectoCliente.servicioweb.LoginResponse Login(ProyectoCliente.servicioweb.LoginRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/LoginRequest", ReplyAction="http://Volumen/VolumenEsfera/LoginResponse")]
-        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.LoginResponse> LoginAsync(ProyectoCliente.servicioweb.LoginRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/dotcomprasRequest", ReplyAction="http://Volumen/VolumenEsfera/dotcomprasResponse")]
+        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.dotcomprasResponse> dotcomprasAsync(ProyectoCliente.servicioweb.dotcomprasRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg0 del espacio de nombres  no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://Volumen/VolumenEsfera/eliminarcomprar")]
-        void eliminarcomprar(ProyectoCliente.servicioweb.eliminarcomprar request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/agregarcompraRequest", ReplyAction="http://Volumen/VolumenEsfera/agregarcompraResponse")]
+        ProyectoCliente.servicioweb.agregarcompraResponse agregarcompra(ProyectoCliente.servicioweb.agregarcompraRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://Volumen/VolumenEsfera/eliminarcomprar")]
-        System.Threading.Tasks.Task eliminarcomprarAsync(ProyectoCliente.servicioweb.eliminarcomprar request);
-        
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg0 del espacio de nombres  no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://Volumen/VolumenEsfera/AgregarACarritoDesdeCompras")]
-        void AgregarACarritoDesdeCompras(ProyectoCliente.servicioweb.AgregarACarritoDesdeCompras request);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://Volumen/VolumenEsfera/AgregarACarritoDesdeCompras")]
-        System.Threading.Tasks.Task AgregarACarritoDesdeComprasAsync(ProyectoCliente.servicioweb.AgregarACarritoDesdeCompras request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/agregarcompraRequest", ReplyAction="http://Volumen/VolumenEsfera/agregarcompraResponse")]
+        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.agregarcompraResponse> agregarcompraAsync(ProyectoCliente.servicioweb.agregarcompraRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg0 del espacio de nombres  no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://Volumen/VolumenEsfera/limpiarporcomprar")]
-        void limpiarporcomprar(ProyectoCliente.servicioweb.limpiarporcomprar request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/carritodotRequest", ReplyAction="http://Volumen/VolumenEsfera/carritodotResponse")]
+        ProyectoCliente.servicioweb.carritodotResponse carritodot(ProyectoCliente.servicioweb.carritodotRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://Volumen/VolumenEsfera/limpiarporcomprar")]
-        System.Threading.Tasks.Task limpiarporcomprarAsync(ProyectoCliente.servicioweb.limpiarporcomprar request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/carritodotRequest", ReplyAction="http://Volumen/VolumenEsfera/carritodotResponse")]
+        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.carritodotResponse> carritodotAsync(ProyectoCliente.servicioweb.carritodotRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg0 del espacio de nombres  no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/comprarRequest", ReplyAction="http://Volumen/VolumenEsfera/comprarResponse")]
+        ProyectoCliente.servicioweb.comprarResponse comprar(ProyectoCliente.servicioweb.comprarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Volumen/VolumenEsfera/comprarRequest", ReplyAction="http://Volumen/VolumenEsfera/comprarResponse")]
+        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.comprarResponse> comprarAsync(ProyectoCliente.servicioweb.comprarRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class dotcomprasRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="dotcompras", Namespace="http://Volumen/", Order=0)]
-        public ProyectoCliente.servicioweb.dotcomprasRequestBody Body;
-        
-        public dotcomprasRequest() {
-        }
-        
-        public dotcomprasRequest(ProyectoCliente.servicioweb.dotcomprasRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class dotcomprasRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string arg0;
-        
-        public dotcomprasRequestBody() {
-        }
-        
-        public dotcomprasRequestBody(string arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class dotcomprasResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="dotcomprasResponse", Namespace="http://Volumen/", Order=0)]
-        public ProyectoCliente.servicioweb.dotcomprasResponseBody Body;
-        
-        public dotcomprasResponse() {
-        }
-        
-        public dotcomprasResponse(ProyectoCliente.servicioweb.dotcomprasResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class dotcomprasResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string @return;
-        
-        public dotcomprasResponseBody() {
-        }
-        
-        public dotcomprasResponseBody(string @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class carritodotRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="carritodot", Namespace="http://Volumen/", Order=0)]
-        public ProyectoCliente.servicioweb.carritodotRequestBody Body;
-        
-        public carritodotRequest() {
-        }
-        
-        public carritodotRequest(ProyectoCliente.servicioweb.carritodotRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class carritodotRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string arg0;
-        
-        public carritodotRequestBody() {
-        }
-        
-        public carritodotRequestBody(string arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class carritodotResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="carritodotResponse", Namespace="http://Volumen/", Order=0)]
-        public ProyectoCliente.servicioweb.carritodotResponseBody Body;
-        
-        public carritodotResponse() {
-        }
-        
-        public carritodotResponse(ProyectoCliente.servicioweb.carritodotResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class carritodotResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string @return;
-        
-        public carritodotResponseBody() {
-        }
-        
-        public carritodotResponseBody(string @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class agregarcarrito {
+    public partial class agregarcarritoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="agregarcarrito", Namespace="http://Volumen/", Order=0)]
-        public ProyectoCliente.servicioweb.agregarcarritoBody Body;
+        public ProyectoCliente.servicioweb.agregarcarritoRequestBody Body;
         
-        public agregarcarrito() {
+        public agregarcarritoRequest() {
         }
         
-        public agregarcarrito(ProyectoCliente.servicioweb.agregarcarritoBody Body) {
+        public agregarcarritoRequest(ProyectoCliente.servicioweb.agregarcarritoRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -243,7 +86,7 @@ namespace ProyectoCliente.servicioweb {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class agregarcarritoBody {
+    public partial class agregarcarritoRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public string arg0;
@@ -254,10 +97,10 @@ namespace ProyectoCliente.servicioweb {
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
         public long arg2;
         
-        public agregarcarritoBody() {
+        public agregarcarritoRequestBody() {
         }
         
-        public agregarcarritoBody(string arg0, int arg1, long arg2) {
+        public agregarcarritoRequestBody(string arg0, int arg1, long arg2) {
             this.arg0 = arg0;
             this.arg1 = arg1;
             this.arg2 = arg2;
@@ -268,49 +111,15 @@ namespace ProyectoCliente.servicioweb {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class comprar {
+    public partial class agregarcarritoResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="comprar", Namespace="http://Volumen/", Order=0)]
-        public ProyectoCliente.servicioweb.comprarBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="agregarcarritoResponse", Namespace="http://Volumen/", Order=0)]
+        public ProyectoCliente.servicioweb.agregarcarritoResponseBody Body;
         
-        public comprar() {
+        public agregarcarritoResponse() {
         }
         
-        public comprar(ProyectoCliente.servicioweb.comprarBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class comprarBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string arg0;
-        
-        public comprarBody() {
-        }
-        
-        public comprarBody(string arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CatalogoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Catalogo", Namespace="http://Volumen/", Order=0)]
-        public ProyectoCliente.servicioweb.CatalogoRequestBody Body;
-        
-        public CatalogoRequest() {
-        }
-        
-        public CatalogoRequest(ProyectoCliente.servicioweb.CatalogoRequestBody Body) {
+        public agregarcarritoResponse(ProyectoCliente.servicioweb.agregarcarritoResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -319,85 +128,9 @@ namespace ProyectoCliente.servicioweb {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class CatalogoRequestBody {
+    public partial class agregarcarritoResponseBody {
         
-        public CatalogoRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CatalogoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CatalogoResponse", Namespace="http://Volumen/", Order=0)]
-        public ProyectoCliente.servicioweb.CatalogoResponseBody Body;
-        
-        public CatalogoResponse() {
-        }
-        
-        public CatalogoResponse(ProyectoCliente.servicioweb.CatalogoResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class CatalogoResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string @return;
-        
-        public CatalogoResponseBody() {
-        }
-        
-        public CatalogoResponseBody(string @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class agregarcompra {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="agregarcompra", Namespace="http://Volumen/", Order=0)]
-        public ProyectoCliente.servicioweb.agregarcompraBody Body;
-        
-        public agregarcompra() {
-        }
-        
-        public agregarcompra(ProyectoCliente.servicioweb.agregarcompraBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class agregarcompraBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string arg0;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public int arg1;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public long arg2;
-        
-        public agregarcompraBody() {
-        }
-        
-        public agregarcompraBody(string arg0, int arg1, long arg2) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
+        public agregarcarritoResponseBody() {
         }
     }
     
@@ -477,15 +210,42 @@ namespace ProyectoCliente.servicioweb {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class eliminarcomprar {
+    public partial class CatalogoRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="eliminarcomprar", Namespace="http://Volumen/", Order=0)]
-        public ProyectoCliente.servicioweb.eliminarcomprarBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Catalogo", Namespace="http://Volumen/", Order=0)]
+        public ProyectoCliente.servicioweb.CatalogoRequestBody Body;
         
-        public eliminarcomprar() {
+        public CatalogoRequest() {
         }
         
-        public eliminarcomprar(ProyectoCliente.servicioweb.eliminarcomprarBody Body) {
+        public CatalogoRequest(ProyectoCliente.servicioweb.CatalogoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class CatalogoRequestBody {
+        
+        public CatalogoRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CatalogoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CatalogoResponse", Namespace="http://Volumen/", Order=0)]
+        public ProyectoCliente.servicioweb.CatalogoResponseBody Body;
+        
+        public CatalogoResponse() {
+        }
+        
+        public CatalogoResponse(ProyectoCliente.servicioweb.CatalogoResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -494,15 +254,49 @@ namespace ProyectoCliente.servicioweb {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class eliminarcomprarBody {
+    public partial class CatalogoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string @return;
+        
+        public CatalogoResponseBody() {
+        }
+        
+        public CatalogoResponseBody(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class dotcomprasRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="dotcompras", Namespace="http://Volumen/", Order=0)]
+        public ProyectoCliente.servicioweb.dotcomprasRequestBody Body;
+        
+        public dotcomprasRequest() {
+        }
+        
+        public dotcomprasRequest(ProyectoCliente.servicioweb.dotcomprasRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class dotcomprasRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public string arg0;
         
-        public eliminarcomprarBody() {
+        public dotcomprasRequestBody() {
         }
         
-        public eliminarcomprarBody(string arg0) {
+        public dotcomprasRequestBody(string arg0) {
             this.arg0 = arg0;
         }
     }
@@ -511,15 +305,15 @@ namespace ProyectoCliente.servicioweb {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AgregarACarritoDesdeCompras {
+    public partial class dotcomprasResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AgregarACarritoDesdeCompras", Namespace="http://Volumen/", Order=0)]
-        public ProyectoCliente.servicioweb.AgregarACarritoDesdeComprasBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="dotcomprasResponse", Namespace="http://Volumen/", Order=0)]
+        public ProyectoCliente.servicioweb.dotcomprasResponseBody Body;
         
-        public AgregarACarritoDesdeCompras() {
+        public dotcomprasResponse() {
         }
         
-        public AgregarACarritoDesdeCompras(ProyectoCliente.servicioweb.AgregarACarritoDesdeComprasBody Body) {
+        public dotcomprasResponse(ProyectoCliente.servicioweb.dotcomprasResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -528,15 +322,118 @@ namespace ProyectoCliente.servicioweb {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class AgregarACarritoDesdeComprasBody {
+    public partial class dotcomprasResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string @return;
+        
+        public dotcomprasResponseBody() {
+        }
+        
+        public dotcomprasResponseBody(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class agregarcompraRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="agregarcompra", Namespace="http://Volumen/", Order=0)]
+        public ProyectoCliente.servicioweb.agregarcompraRequestBody Body;
+        
+        public agregarcompraRequest() {
+        }
+        
+        public agregarcompraRequest(ProyectoCliente.servicioweb.agregarcompraRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class agregarcompraRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public string arg0;
         
-        public AgregarACarritoDesdeComprasBody() {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int arg1;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public long arg2;
+        
+        public agregarcompraRequestBody() {
         }
         
-        public AgregarACarritoDesdeComprasBody(string arg0) {
+        public agregarcompraRequestBody(string arg0, int arg1, long arg2) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+            this.arg2 = arg2;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class agregarcompraResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="agregarcompraResponse", Namespace="http://Volumen/", Order=0)]
+        public ProyectoCliente.servicioweb.agregarcompraResponseBody Body;
+        
+        public agregarcompraResponse() {
+        }
+        
+        public agregarcompraResponse(ProyectoCliente.servicioweb.agregarcompraResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class agregarcompraResponseBody {
+        
+        public agregarcompraResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class carritodotRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="carritodot", Namespace="http://Volumen/", Order=0)]
+        public ProyectoCliente.servicioweb.carritodotRequestBody Body;
+        
+        public carritodotRequest() {
+        }
+        
+        public carritodotRequest(ProyectoCliente.servicioweb.carritodotRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class carritodotRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string arg0;
+        
+        public carritodotRequestBody() {
+        }
+        
+        public carritodotRequestBody(string arg0) {
             this.arg0 = arg0;
         }
     }
@@ -545,15 +442,15 @@ namespace ProyectoCliente.servicioweb {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class limpiarporcomprar {
+    public partial class carritodotResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="limpiarporcomprar", Namespace="http://Volumen/", Order=0)]
-        public ProyectoCliente.servicioweb.limpiarporcomprarBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="carritodotResponse", Namespace="http://Volumen/", Order=0)]
+        public ProyectoCliente.servicioweb.carritodotResponseBody Body;
         
-        public limpiarporcomprar() {
+        public carritodotResponse() {
         }
         
-        public limpiarporcomprar(ProyectoCliente.servicioweb.limpiarporcomprarBody Body) {
+        public carritodotResponse(ProyectoCliente.servicioweb.carritodotResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -562,16 +459,77 @@ namespace ProyectoCliente.servicioweb {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class limpiarporcomprarBody {
+    public partial class carritodotResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string @return;
+        
+        public carritodotResponseBody() {
+        }
+        
+        public carritodotResponseBody(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class comprarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="comprar", Namespace="http://Volumen/", Order=0)]
+        public ProyectoCliente.servicioweb.comprarRequestBody Body;
+        
+        public comprarRequest() {
+        }
+        
+        public comprarRequest(ProyectoCliente.servicioweb.comprarRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class comprarRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public string arg0;
         
-        public limpiarporcomprarBody() {
+        public comprarRequestBody() {
         }
         
-        public limpiarporcomprarBody(string arg0) {
+        public comprarRequestBody(string arg0) {
             this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class comprarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="comprarResponse", Namespace="http://Volumen/", Order=0)]
+        public ProyectoCliente.servicioweb.comprarResponseBody Body;
+        
+        public comprarResponse() {
+        }
+        
+        public comprarResponse(ProyectoCliente.servicioweb.comprarResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class comprarResponseBody {
+        
+        public comprarResponseBody() {
         }
     }
     
@@ -603,156 +561,31 @@ namespace ProyectoCliente.servicioweb {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ProyectoCliente.servicioweb.dotcomprasResponse ProyectoCliente.servicioweb.VolumenEsfera.dotcompras(ProyectoCliente.servicioweb.dotcomprasRequest request) {
-            return base.Channel.dotcompras(request);
-        }
-        
-        public string dotcompras(string arg0) {
-            ProyectoCliente.servicioweb.dotcomprasRequest inValue = new ProyectoCliente.servicioweb.dotcomprasRequest();
-            inValue.Body = new ProyectoCliente.servicioweb.dotcomprasRequestBody();
-            inValue.Body.arg0 = arg0;
-            ProyectoCliente.servicioweb.dotcomprasResponse retVal = ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).dotcompras(inValue);
-            return retVal.Body.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.dotcomprasResponse> ProyectoCliente.servicioweb.VolumenEsfera.dotcomprasAsync(ProyectoCliente.servicioweb.dotcomprasRequest request) {
-            return base.Channel.dotcomprasAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ProyectoCliente.servicioweb.dotcomprasResponse> dotcomprasAsync(string arg0) {
-            ProyectoCliente.servicioweb.dotcomprasRequest inValue = new ProyectoCliente.servicioweb.dotcomprasRequest();
-            inValue.Body = new ProyectoCliente.servicioweb.dotcomprasRequestBody();
-            inValue.Body.arg0 = arg0;
-            return ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).dotcomprasAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ProyectoCliente.servicioweb.carritodotResponse ProyectoCliente.servicioweb.VolumenEsfera.carritodot(ProyectoCliente.servicioweb.carritodotRequest request) {
-            return base.Channel.carritodot(request);
-        }
-        
-        public string carritodot(string arg0) {
-            ProyectoCliente.servicioweb.carritodotRequest inValue = new ProyectoCliente.servicioweb.carritodotRequest();
-            inValue.Body = new ProyectoCliente.servicioweb.carritodotRequestBody();
-            inValue.Body.arg0 = arg0;
-            ProyectoCliente.servicioweb.carritodotResponse retVal = ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).carritodot(inValue);
-            return retVal.Body.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.carritodotResponse> ProyectoCliente.servicioweb.VolumenEsfera.carritodotAsync(ProyectoCliente.servicioweb.carritodotRequest request) {
-            return base.Channel.carritodotAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ProyectoCliente.servicioweb.carritodotResponse> carritodotAsync(string arg0) {
-            ProyectoCliente.servicioweb.carritodotRequest inValue = new ProyectoCliente.servicioweb.carritodotRequest();
-            inValue.Body = new ProyectoCliente.servicioweb.carritodotRequestBody();
-            inValue.Body.arg0 = arg0;
-            return ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).carritodotAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void ProyectoCliente.servicioweb.VolumenEsfera.agregarcarrito(ProyectoCliente.servicioweb.agregarcarrito request) {
-            base.Channel.agregarcarrito(request);
+        ProyectoCliente.servicioweb.agregarcarritoResponse ProyectoCliente.servicioweb.VolumenEsfera.agregarcarrito(ProyectoCliente.servicioweb.agregarcarritoRequest request) {
+            return base.Channel.agregarcarrito(request);
         }
         
         public void agregarcarrito(string arg0, int arg1, long arg2) {
-            ProyectoCliente.servicioweb.agregarcarrito inValue = new ProyectoCliente.servicioweb.agregarcarrito();
-            inValue.Body = new ProyectoCliente.servicioweb.agregarcarritoBody();
+            ProyectoCliente.servicioweb.agregarcarritoRequest inValue = new ProyectoCliente.servicioweb.agregarcarritoRequest();
+            inValue.Body = new ProyectoCliente.servicioweb.agregarcarritoRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
-            ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).agregarcarrito(inValue);
+            ProyectoCliente.servicioweb.agregarcarritoResponse retVal = ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).agregarcarrito(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task ProyectoCliente.servicioweb.VolumenEsfera.agregarcarritoAsync(ProyectoCliente.servicioweb.agregarcarrito request) {
+        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.agregarcarritoResponse> ProyectoCliente.servicioweb.VolumenEsfera.agregarcarritoAsync(ProyectoCliente.servicioweb.agregarcarritoRequest request) {
             return base.Channel.agregarcarritoAsync(request);
         }
         
-        public System.Threading.Tasks.Task agregarcarritoAsync(string arg0, int arg1, long arg2) {
-            ProyectoCliente.servicioweb.agregarcarrito inValue = new ProyectoCliente.servicioweb.agregarcarrito();
-            inValue.Body = new ProyectoCliente.servicioweb.agregarcarritoBody();
+        public System.Threading.Tasks.Task<ProyectoCliente.servicioweb.agregarcarritoResponse> agregarcarritoAsync(string arg0, int arg1, long arg2) {
+            ProyectoCliente.servicioweb.agregarcarritoRequest inValue = new ProyectoCliente.servicioweb.agregarcarritoRequest();
+            inValue.Body = new ProyectoCliente.servicioweb.agregarcarritoRequestBody();
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             inValue.Body.arg2 = arg2;
             return ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).agregarcarritoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void ProyectoCliente.servicioweb.VolumenEsfera.comprar(ProyectoCliente.servicioweb.comprar request) {
-            base.Channel.comprar(request);
-        }
-        
-        public void comprar(string arg0) {
-            ProyectoCliente.servicioweb.comprar inValue = new ProyectoCliente.servicioweb.comprar();
-            inValue.Body = new ProyectoCliente.servicioweb.comprarBody();
-            inValue.Body.arg0 = arg0;
-            ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).comprar(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task ProyectoCliente.servicioweb.VolumenEsfera.comprarAsync(ProyectoCliente.servicioweb.comprar request) {
-            return base.Channel.comprarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task comprarAsync(string arg0) {
-            ProyectoCliente.servicioweb.comprar inValue = new ProyectoCliente.servicioweb.comprar();
-            inValue.Body = new ProyectoCliente.servicioweb.comprarBody();
-            inValue.Body.arg0 = arg0;
-            return ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).comprarAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ProyectoCliente.servicioweb.CatalogoResponse ProyectoCliente.servicioweb.VolumenEsfera.Catalogo(ProyectoCliente.servicioweb.CatalogoRequest request) {
-            return base.Channel.Catalogo(request);
-        }
-        
-        public string Catalogo() {
-            ProyectoCliente.servicioweb.CatalogoRequest inValue = new ProyectoCliente.servicioweb.CatalogoRequest();
-            inValue.Body = new ProyectoCliente.servicioweb.CatalogoRequestBody();
-            ProyectoCliente.servicioweb.CatalogoResponse retVal = ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).Catalogo(inValue);
-            return retVal.Body.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.CatalogoResponse> ProyectoCliente.servicioweb.VolumenEsfera.CatalogoAsync(ProyectoCliente.servicioweb.CatalogoRequest request) {
-            return base.Channel.CatalogoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ProyectoCliente.servicioweb.CatalogoResponse> CatalogoAsync() {
-            ProyectoCliente.servicioweb.CatalogoRequest inValue = new ProyectoCliente.servicioweb.CatalogoRequest();
-            inValue.Body = new ProyectoCliente.servicioweb.CatalogoRequestBody();
-            return ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).CatalogoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void ProyectoCliente.servicioweb.VolumenEsfera.agregarcompra(ProyectoCliente.servicioweb.agregarcompra request) {
-            base.Channel.agregarcompra(request);
-        }
-        
-        public void agregarcompra(string arg0, int arg1, long arg2) {
-            ProyectoCliente.servicioweb.agregarcompra inValue = new ProyectoCliente.servicioweb.agregarcompra();
-            inValue.Body = new ProyectoCliente.servicioweb.agregarcompraBody();
-            inValue.Body.arg0 = arg0;
-            inValue.Body.arg1 = arg1;
-            inValue.Body.arg2 = arg2;
-            ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).agregarcompra(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task ProyectoCliente.servicioweb.VolumenEsfera.agregarcompraAsync(ProyectoCliente.servicioweb.agregarcompra request) {
-            return base.Channel.agregarcompraAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task agregarcompraAsync(string arg0, int arg1, long arg2) {
-            ProyectoCliente.servicioweb.agregarcompra inValue = new ProyectoCliente.servicioweb.agregarcompra();
-            inValue.Body = new ProyectoCliente.servicioweb.agregarcompraBody();
-            inValue.Body.arg0 = arg0;
-            inValue.Body.arg1 = arg1;
-            inValue.Body.arg2 = arg2;
-            return ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).agregarcompraAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -783,75 +616,128 @@ namespace ProyectoCliente.servicioweb {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void ProyectoCliente.servicioweb.VolumenEsfera.eliminarcomprar(ProyectoCliente.servicioweb.eliminarcomprar request) {
-            base.Channel.eliminarcomprar(request);
+        ProyectoCliente.servicioweb.CatalogoResponse ProyectoCliente.servicioweb.VolumenEsfera.Catalogo(ProyectoCliente.servicioweb.CatalogoRequest request) {
+            return base.Channel.Catalogo(request);
         }
         
-        public void eliminarcomprar(string arg0) {
-            ProyectoCliente.servicioweb.eliminarcomprar inValue = new ProyectoCliente.servicioweb.eliminarcomprar();
-            inValue.Body = new ProyectoCliente.servicioweb.eliminarcomprarBody();
-            inValue.Body.arg0 = arg0;
-            ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).eliminarcomprar(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task ProyectoCliente.servicioweb.VolumenEsfera.eliminarcomprarAsync(ProyectoCliente.servicioweb.eliminarcomprar request) {
-            return base.Channel.eliminarcomprarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task eliminarcomprarAsync(string arg0) {
-            ProyectoCliente.servicioweb.eliminarcomprar inValue = new ProyectoCliente.servicioweb.eliminarcomprar();
-            inValue.Body = new ProyectoCliente.servicioweb.eliminarcomprarBody();
-            inValue.Body.arg0 = arg0;
-            return ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).eliminarcomprarAsync(inValue);
+        public string Catalogo() {
+            ProyectoCliente.servicioweb.CatalogoRequest inValue = new ProyectoCliente.servicioweb.CatalogoRequest();
+            inValue.Body = new ProyectoCliente.servicioweb.CatalogoRequestBody();
+            ProyectoCliente.servicioweb.CatalogoResponse retVal = ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).Catalogo(inValue);
+            return retVal.Body.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void ProyectoCliente.servicioweb.VolumenEsfera.AgregarACarritoDesdeCompras(ProyectoCliente.servicioweb.AgregarACarritoDesdeCompras request) {
-            base.Channel.AgregarACarritoDesdeCompras(request);
+        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.CatalogoResponse> ProyectoCliente.servicioweb.VolumenEsfera.CatalogoAsync(ProyectoCliente.servicioweb.CatalogoRequest request) {
+            return base.Channel.CatalogoAsync(request);
         }
         
-        public void AgregarACarritoDesdeCompras(string arg0) {
-            ProyectoCliente.servicioweb.AgregarACarritoDesdeCompras inValue = new ProyectoCliente.servicioweb.AgregarACarritoDesdeCompras();
-            inValue.Body = new ProyectoCliente.servicioweb.AgregarACarritoDesdeComprasBody();
-            inValue.Body.arg0 = arg0;
-            ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).AgregarACarritoDesdeCompras(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task ProyectoCliente.servicioweb.VolumenEsfera.AgregarACarritoDesdeComprasAsync(ProyectoCliente.servicioweb.AgregarACarritoDesdeCompras request) {
-            return base.Channel.AgregarACarritoDesdeComprasAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task AgregarACarritoDesdeComprasAsync(string arg0) {
-            ProyectoCliente.servicioweb.AgregarACarritoDesdeCompras inValue = new ProyectoCliente.servicioweb.AgregarACarritoDesdeCompras();
-            inValue.Body = new ProyectoCliente.servicioweb.AgregarACarritoDesdeComprasBody();
-            inValue.Body.arg0 = arg0;
-            return ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).AgregarACarritoDesdeComprasAsync(inValue);
+        public System.Threading.Tasks.Task<ProyectoCliente.servicioweb.CatalogoResponse> CatalogoAsync() {
+            ProyectoCliente.servicioweb.CatalogoRequest inValue = new ProyectoCliente.servicioweb.CatalogoRequest();
+            inValue.Body = new ProyectoCliente.servicioweb.CatalogoRequestBody();
+            return ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).CatalogoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void ProyectoCliente.servicioweb.VolumenEsfera.limpiarporcomprar(ProyectoCliente.servicioweb.limpiarporcomprar request) {
-            base.Channel.limpiarporcomprar(request);
+        ProyectoCliente.servicioweb.dotcomprasResponse ProyectoCliente.servicioweb.VolumenEsfera.dotcompras(ProyectoCliente.servicioweb.dotcomprasRequest request) {
+            return base.Channel.dotcompras(request);
         }
         
-        public void limpiarporcomprar(string arg0) {
-            ProyectoCliente.servicioweb.limpiarporcomprar inValue = new ProyectoCliente.servicioweb.limpiarporcomprar();
-            inValue.Body = new ProyectoCliente.servicioweb.limpiarporcomprarBody();
+        public string dotcompras(string arg0) {
+            ProyectoCliente.servicioweb.dotcomprasRequest inValue = new ProyectoCliente.servicioweb.dotcomprasRequest();
+            inValue.Body = new ProyectoCliente.servicioweb.dotcomprasRequestBody();
             inValue.Body.arg0 = arg0;
-            ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).limpiarporcomprar(inValue);
+            ProyectoCliente.servicioweb.dotcomprasResponse retVal = ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).dotcompras(inValue);
+            return retVal.Body.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task ProyectoCliente.servicioweb.VolumenEsfera.limpiarporcomprarAsync(ProyectoCliente.servicioweb.limpiarporcomprar request) {
-            return base.Channel.limpiarporcomprarAsync(request);
+        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.dotcomprasResponse> ProyectoCliente.servicioweb.VolumenEsfera.dotcomprasAsync(ProyectoCliente.servicioweb.dotcomprasRequest request) {
+            return base.Channel.dotcomprasAsync(request);
         }
         
-        public System.Threading.Tasks.Task limpiarporcomprarAsync(string arg0) {
-            ProyectoCliente.servicioweb.limpiarporcomprar inValue = new ProyectoCliente.servicioweb.limpiarporcomprar();
-            inValue.Body = new ProyectoCliente.servicioweb.limpiarporcomprarBody();
+        public System.Threading.Tasks.Task<ProyectoCliente.servicioweb.dotcomprasResponse> dotcomprasAsync(string arg0) {
+            ProyectoCliente.servicioweb.dotcomprasRequest inValue = new ProyectoCliente.servicioweb.dotcomprasRequest();
+            inValue.Body = new ProyectoCliente.servicioweb.dotcomprasRequestBody();
             inValue.Body.arg0 = arg0;
-            return ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).limpiarporcomprarAsync(inValue);
+            return ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).dotcomprasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ProyectoCliente.servicioweb.agregarcompraResponse ProyectoCliente.servicioweb.VolumenEsfera.agregarcompra(ProyectoCliente.servicioweb.agregarcompraRequest request) {
+            return base.Channel.agregarcompra(request);
+        }
+        
+        public void agregarcompra(string arg0, int arg1, long arg2) {
+            ProyectoCliente.servicioweb.agregarcompraRequest inValue = new ProyectoCliente.servicioweb.agregarcompraRequest();
+            inValue.Body = new ProyectoCliente.servicioweb.agregarcompraRequestBody();
+            inValue.Body.arg0 = arg0;
+            inValue.Body.arg1 = arg1;
+            inValue.Body.arg2 = arg2;
+            ProyectoCliente.servicioweb.agregarcompraResponse retVal = ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).agregarcompra(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.agregarcompraResponse> ProyectoCliente.servicioweb.VolumenEsfera.agregarcompraAsync(ProyectoCliente.servicioweb.agregarcompraRequest request) {
+            return base.Channel.agregarcompraAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ProyectoCliente.servicioweb.agregarcompraResponse> agregarcompraAsync(string arg0, int arg1, long arg2) {
+            ProyectoCliente.servicioweb.agregarcompraRequest inValue = new ProyectoCliente.servicioweb.agregarcompraRequest();
+            inValue.Body = new ProyectoCliente.servicioweb.agregarcompraRequestBody();
+            inValue.Body.arg0 = arg0;
+            inValue.Body.arg1 = arg1;
+            inValue.Body.arg2 = arg2;
+            return ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).agregarcompraAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ProyectoCliente.servicioweb.carritodotResponse ProyectoCliente.servicioweb.VolumenEsfera.carritodot(ProyectoCliente.servicioweb.carritodotRequest request) {
+            return base.Channel.carritodot(request);
+        }
+        
+        public string carritodot(string arg0) {
+            ProyectoCliente.servicioweb.carritodotRequest inValue = new ProyectoCliente.servicioweb.carritodotRequest();
+            inValue.Body = new ProyectoCliente.servicioweb.carritodotRequestBody();
+            inValue.Body.arg0 = arg0;
+            ProyectoCliente.servicioweb.carritodotResponse retVal = ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).carritodot(inValue);
+            return retVal.Body.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.carritodotResponse> ProyectoCliente.servicioweb.VolumenEsfera.carritodotAsync(ProyectoCliente.servicioweb.carritodotRequest request) {
+            return base.Channel.carritodotAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ProyectoCliente.servicioweb.carritodotResponse> carritodotAsync(string arg0) {
+            ProyectoCliente.servicioweb.carritodotRequest inValue = new ProyectoCliente.servicioweb.carritodotRequest();
+            inValue.Body = new ProyectoCliente.servicioweb.carritodotRequestBody();
+            inValue.Body.arg0 = arg0;
+            return ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).carritodotAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ProyectoCliente.servicioweb.comprarResponse ProyectoCliente.servicioweb.VolumenEsfera.comprar(ProyectoCliente.servicioweb.comprarRequest request) {
+            return base.Channel.comprar(request);
+        }
+        
+        public void comprar(string arg0) {
+            ProyectoCliente.servicioweb.comprarRequest inValue = new ProyectoCliente.servicioweb.comprarRequest();
+            inValue.Body = new ProyectoCliente.servicioweb.comprarRequestBody();
+            inValue.Body.arg0 = arg0;
+            ProyectoCliente.servicioweb.comprarResponse retVal = ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).comprar(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ProyectoCliente.servicioweb.comprarResponse> ProyectoCliente.servicioweb.VolumenEsfera.comprarAsync(ProyectoCliente.servicioweb.comprarRequest request) {
+            return base.Channel.comprarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ProyectoCliente.servicioweb.comprarResponse> comprarAsync(string arg0) {
+            ProyectoCliente.servicioweb.comprarRequest inValue = new ProyectoCliente.servicioweb.comprarRequest();
+            inValue.Body = new ProyectoCliente.servicioweb.comprarRequestBody();
+            inValue.Body.arg0 = arg0;
+            return ((ProyectoCliente.servicioweb.VolumenEsfera)(this)).comprarAsync(inValue);
         }
     }
 }

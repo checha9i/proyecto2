@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://Volumen/" targetNamespace="http://Volumen/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="AgregarACarritoDesdeCompras" type="tns:AgregarACarritoDesdeCompras" />
   <xs:element name="Catalogo" type="tns:Catalogo" />
   <xs:element name="CatalogoResponse" type="tns:CatalogoResponse" />
   <xs:element name="Login" type="tns:Login" />
   <xs:element name="LoginResponse" type="tns:LoginResponse" />
   <xs:element name="agregarcarrito" type="tns:agregarcarrito" />
+  <xs:element name="agregarcarritoResponse" type="tns:agregarcarritoResponse" />
   <xs:element name="agregarcompra" type="tns:agregarcompra" />
+  <xs:element name="agregarcompraResponse" type="tns:agregarcompraResponse" />
   <xs:element name="carritodot" type="tns:carritodot" />
   <xs:element name="carritodotResponse" type="tns:carritodotResponse" />
   <xs:element name="comprar" type="tns:comprar" />
+  <xs:element name="comprarResponse" type="tns:comprarResponse" />
   <xs:element name="dotcompras" type="tns:dotcompras" />
   <xs:element name="dotcomprasResponse" type="tns:dotcomprasResponse" />
-  <xs:element name="eliminarcomprar" type="tns:eliminarcomprar" />
-  <xs:element name="limpiarporcomprar" type="tns:limpiarporcomprar" />
-  <xs:complexType name="eliminarcomprar">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="limpiarporcomprar">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="Login">
     <xs:sequence>
       <xs:element minOccurs="0" name="User" type="xs:string" />
@@ -42,10 +32,8 @@
       <xs:element name="arg2" type="xs:long" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="AgregarACarritoDesdeCompras">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="xs:string" />
-    </xs:sequence>
+  <xs:complexType name="agregarcompraResponse">
+    <xs:sequence />
   </xs:complexType>
   <xs:complexType name="Catalogo">
     <xs:sequence />
@@ -70,12 +58,18 @@
       <xs:element minOccurs="0" name="arg0" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="comprarResponse">
+    <xs:sequence />
+  </xs:complexType>
   <xs:complexType name="agregarcarrito">
     <xs:sequence>
       <xs:element minOccurs="0" name="arg0" type="xs:string" />
       <xs:element name="arg1" type="xs:int" />
       <xs:element name="arg2" type="xs:long" />
     </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarcarritoResponse">
+    <xs:sequence />
   </xs:complexType>
   <xs:complexType name="carritodot">
     <xs:sequence>
