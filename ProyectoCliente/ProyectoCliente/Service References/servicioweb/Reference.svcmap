@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/EDDServidorProyecto/VolumenEsfera?WSDL" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.1.8:8080/EDDServidorProyecto/VolumenEsfera?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="VolumenEsfera.wsdl" MetadataType="Wsdl" ID="2182ad0d-8b29-4ecc-966c-949f3566c599" SourceId="1" SourceUrl="http://localhost:8080/EDDServidorProyecto/VolumenEsfera?WSDL" />
-    <MetadataFile FileName="VolumenEsfera.xsd" MetadataType="Schema" ID="1e2164ee-5b6e-4e81-bba6-ffff5e50893b" SourceId="1" SourceUrl="http://localhost:8080/EDDServidorProyecto/VolumenEsfera?xsd=1" />
+    <MetadataFile FileName="VolumenEsfera1.xsd" MetadataType="Schema" ID="fd761c85-7315-4f03-828f-9b546cbfda49" SourceId="1" SourceUrl="http://192.168.1.8:8080/EDDServidorProyecto/VolumenEsfera?xsd=1" />
+    <MetadataFile FileName="VolumenEsfera1.wsdl" MetadataType="Wsdl" ID="1ffeb8b2-5eda-46e1-82b8-e3543a71c7e2" SourceId="1" SourceUrl="http://192.168.1.8:8080/EDDServidorProyecto/VolumenEsfera?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

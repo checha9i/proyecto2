@@ -162,6 +162,15 @@
     <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.dotcomprasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.agregarcarritoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.agregarcompraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.comprarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\servicioweb\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -173,8 +182,8 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
-    <None Include="Service References\servicioweb\VolumenEsfera.wsdl" />
-    <None Include="Service References\servicioweb\VolumenEsfera.xsd">
+    <None Include="Service References\servicioweb\VolumenEsfera1.wsdl" />
+    <None Include="Service References\servicioweb\VolumenEsfera1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">
