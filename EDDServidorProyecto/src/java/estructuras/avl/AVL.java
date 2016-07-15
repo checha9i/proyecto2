@@ -41,7 +41,8 @@ public class AVL {
         if(usuario != null){
             boolean flag = false;
             while(!usuario.getCompras().isEmpty()){
-                usuario.getCarrito().insertar(usuario.getCompras().remover());
+                Cola.Nodo temp = usuario.getCompras().remover();
+                usuario.getCarrito().insertar(usuario.getCarrito().crearNodo(temp.getDato()));
                 flag = true;
             }//fin while
             return flag;
