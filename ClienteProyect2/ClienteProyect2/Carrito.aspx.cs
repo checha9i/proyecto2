@@ -21,7 +21,7 @@ namespace ClienteProyect2
             String user = Session["usuario"].ToString();
 
 
-            String dot = proxy.dotcompras(Session["usuario"].ToString());
+            String dot = proxy.carritodot(Session["usuario"].ToString());
 
             graficar(dot);
             

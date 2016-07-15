@@ -10,8 +10,8 @@ namespace ClienteProyect2
 {
     public partial class Catalogo : System.Web.UI.Page
     {
-        ClienteProyect2.servicioweb.VolumenEsferaClient proxy = new ClienteProyect2.servicioweb.VolumenEsferaClient();
-        
+
+        servicioweb.VolumenEsferaClient proxy = new servicioweb.VolumenEsferaClient();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["log"] == "no")
@@ -76,7 +76,14 @@ namespace ClienteProyect2
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
             proxy.agregarcarrito(Session["usuario"].ToString(), int.Parse(cantidad.Text), long.Parse(Codigo.Text));
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+            proxy.agregarcompra(Session["usuario"].ToString(), int.Parse(cantidad.Text), long.Parse(Codigo.Text));
         }
 
         

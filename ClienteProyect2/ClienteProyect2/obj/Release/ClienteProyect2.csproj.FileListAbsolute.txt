@@ -18,5 +18,5 @@ C:\Users\javier\Documents\GitHub\proyecto2\ClienteProyect2\ClienteProyect2\bin\N
 C:\Users\javier\Documents\GitHub\proyecto2\ClienteProyect2\ClienteProyect2\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\javier\Documents\GitHub\proyecto2\ClienteProyect2\ClienteProyect2\bin\es\System.Web.Optimization.resources.dll
 C:\Users\javier\Documents\GitHub\proyecto2\ClienteProyect2\ClienteProyect2\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
-C:\Users\javier\Documents\GitHub\proyecto2\ClienteProyect2\ClienteProyect2\obj\Debug\ClienteProyect2.dll
-C:\Users\javier\Documents\GitHub\proyecto2\ClienteProyect2\ClienteProyect2\obj\Debug\ClienteProyect2.pdb
+C:\Users\javier\Documents\GitHub\proyecto2\ClienteProyect2\ClienteProyect2\obj\Release\ClienteProyect2.dll
+C:\Users\javier\Documents\GitHub\proyecto2\ClienteProyect2\ClienteProyect2\obj\Release\ClienteProyect2.pdb
