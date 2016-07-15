@@ -156,16 +156,7 @@
     <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.LoginResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.agregarcarritoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.agregarcompraResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.carritodotResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.comprarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.dotcomprasResponse.datasource">
