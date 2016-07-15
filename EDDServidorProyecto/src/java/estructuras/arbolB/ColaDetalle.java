@@ -31,6 +31,7 @@ public class ColaDetalle {
             getUltimo().setSiguiente(nuevo);
             setUltimo(nuevo);
         }//fin else
+        setContadorId(getContadorId() + 1);
     }
     
     public NodoCola crearNodo(int cantidad,double precio,Producto producto){

@@ -27,8 +27,9 @@ public class Arbol {
     public boolean EmpA = false, Esta = false;
     public int contadorVentas = 1000;
     
-    public void graficarArbol(){
-        Graficar graficar = new Graficar(this);
+    public String getDot(){
+        Graficar graficar = new Graficar();
+        return graficar.getDot(this);
     }
 
     public Nodo NodoExistente(Bnodo p, String correo) {
@@ -157,7 +158,6 @@ public class Arbol {
         }
         return j;
     }
-    
 
     //Meter hoja
     public void MeterHoja(Nodo clave, Bnodo raiz, int k) {

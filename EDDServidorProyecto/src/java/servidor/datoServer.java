@@ -32,12 +32,24 @@ public class datoServer {
             parametros = datos[1].split(",");
             switch(datos[0]){
                 case "Usuario":
+                    if(parametros.length == 2){
+                        USUARIOS.insertarUsuario(parametros[0], parametros[1]);
+                    }
                     break;
                 case "Direccion":
+                    if(parametros.length == 4){
+                        USUARIOS.insertarDireccion(parametros[0], parametros[1], parametros[2], parametros[3]);
+                    }
                     break;
                 case "Carrito":
+                    if(parametros.length == 3){
+                        USUARIOS.insertarCarrito(parametros[0], parametros[1], parametros[2]);
+                    }
                     break;
                 case "PorComprar":
+                    if(parametros.length == 3){
+                        USUARIOS.insertarCompra(parametros[0], parametros[1], parametros[2]);
+                    }
                     break;
                 case "Producto":
                     if(parametros.length == 5){
