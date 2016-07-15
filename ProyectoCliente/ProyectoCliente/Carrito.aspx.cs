@@ -21,7 +21,7 @@ namespace ProyectoCliente
             String user = Session["usuario"].ToString();
 
 
-            String dot = proxy.dotcompras(user);
+            String dot = proxy.dotcompras(Session["usuario"].ToString());
 
             graficar(dot);
            
@@ -47,6 +47,7 @@ p.WaitForExit();
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+
             proxy.eliminarcomprar(Session["usuario"].ToString());
         }
 

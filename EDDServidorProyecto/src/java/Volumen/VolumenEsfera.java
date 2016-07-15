@@ -59,8 +59,7 @@ public class VolumenEsfera {
      * @param user
      * @return 
      */
-    @WebMethod(operationName = "dotcompras")
-    
+    @WebMethod(operationName = "dotcompras")  
     public String dotcompras(String user) {
         //TODO write your implementation code here:
         return null;
