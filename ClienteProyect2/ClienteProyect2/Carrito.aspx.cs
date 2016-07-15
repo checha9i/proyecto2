@@ -48,7 +48,7 @@ p.WaitForExit();
         protected void Button2_Click(object sender, EventArgs e)
         {
 
-          //  proxy.eliminarcomprar(Session["usuario"].ToString());
+           proxy.eliminarcomprar(Session["usuario"].ToString());
             
         }
 

@@ -5,23 +5,8 @@
       <xsd:import schemaLocation="http://192.168.1.8:8080/EDDServidorProyecto/VolumenEsfera?xsd=1" namespace="http://Volumen/" />
     </xsd:schema>
   </types>
-  <message name="agregarcarrito">
-    <part name="parameters" element="tns:agregarcarrito" />
-  </message>
-  <message name="agregarcarritoResponse">
-    <part name="parameters" element="tns:agregarcarritoResponse" />
-  </message>
-  <message name="Login">
-    <part name="parameters" element="tns:Login" />
-  </message>
-  <message name="LoginResponse">
-    <part name="parameters" element="tns:LoginResponse" />
-  </message>
-  <message name="Catalogo">
-    <part name="parameters" element="tns:Catalogo" />
-  </message>
-  <message name="CatalogoResponse">
-    <part name="parameters" element="tns:CatalogoResponse" />
+  <message name="eliminarcomprar">
+    <part name="parameters" element="tns:eliminarcomprar" />
   </message>
   <message name="dotcompras">
     <part name="parameters" element="tns:dotcompras" />
@@ -29,11 +14,26 @@
   <message name="dotcomprasResponse">
     <part name="parameters" element="tns:dotcomprasResponse" />
   </message>
+  <message name="agregarcarrito">
+    <part name="parameters" element="tns:agregarcarrito" />
+  </message>
+  <message name="Login">
+    <part name="parameters" element="tns:Login" />
+  </message>
+  <message name="LoginResponse">
+    <part name="parameters" element="tns:LoginResponse" />
+  </message>
+  <message name="comprar">
+    <part name="parameters" element="tns:comprar" />
+  </message>
+  <message name="Catalogo">
+    <part name="parameters" element="tns:Catalogo" />
+  </message>
+  <message name="CatalogoResponse">
+    <part name="parameters" element="tns:CatalogoResponse" />
+  </message>
   <message name="agregarcompra">
     <part name="parameters" element="tns:agregarcompra" />
-  </message>
-  <message name="agregarcompraResponse">
-    <part name="parameters" element="tns:agregarcompraResponse" />
   </message>
   <message name="carritodot">
     <part name="parameters" element="tns:carritodot" />
@@ -41,70 +41,55 @@
   <message name="carritodotResponse">
     <part name="parameters" element="tns:carritodotResponse" />
   </message>
-  <message name="comprar">
-    <part name="parameters" element="tns:comprar" />
+  <message name="limpiarporcomprar">
+    <part name="parameters" element="tns:limpiarporcomprar" />
   </message>
-  <message name="comprarResponse">
-    <part name="parameters" element="tns:comprarResponse" />
+  <message name="AgregarACarritoDesdeCompras">
+    <part name="parameters" element="tns:AgregarACarritoDesdeCompras" />
   </message>
   <portType name="VolumenEsfera">
-    <operation name="agregarcarrito">
-      <input wsam:Action="http://Volumen/VolumenEsfera/agregarcarritoRequest" message="tns:agregarcarrito" />
-      <output wsam:Action="http://Volumen/VolumenEsfera/agregarcarritoResponse" message="tns:agregarcarritoResponse" />
-    </operation>
-    <operation name="Login">
-      <input wsam:Action="http://Volumen/VolumenEsfera/LoginRequest" message="tns:Login" />
-      <output wsam:Action="http://Volumen/VolumenEsfera/LoginResponse" message="tns:LoginResponse" />
-    </operation>
-    <operation name="Catalogo">
-      <input wsam:Action="http://Volumen/VolumenEsfera/CatalogoRequest" message="tns:Catalogo" />
-      <output wsam:Action="http://Volumen/VolumenEsfera/CatalogoResponse" message="tns:CatalogoResponse" />
+    <operation name="eliminarcomprar">
+      <input wsam:Action="http://Volumen/VolumenEsfera/eliminarcomprar" message="tns:eliminarcomprar" />
     </operation>
     <operation name="dotcompras">
       <input wsam:Action="http://Volumen/VolumenEsfera/dotcomprasRequest" message="tns:dotcompras" />
       <output wsam:Action="http://Volumen/VolumenEsfera/dotcomprasResponse" message="tns:dotcomprasResponse" />
     </operation>
+    <operation name="agregarcarrito">
+      <input wsam:Action="http://Volumen/VolumenEsfera/agregarcarrito" message="tns:agregarcarrito" />
+    </operation>
+    <operation name="Login">
+      <input wsam:Action="http://Volumen/VolumenEsfera/LoginRequest" message="tns:Login" />
+      <output wsam:Action="http://Volumen/VolumenEsfera/LoginResponse" message="tns:LoginResponse" />
+    </operation>
+    <operation name="comprar">
+      <input wsam:Action="http://Volumen/VolumenEsfera/comprar" message="tns:comprar" />
+    </operation>
+    <operation name="Catalogo">
+      <input wsam:Action="http://Volumen/VolumenEsfera/CatalogoRequest" message="tns:Catalogo" />
+      <output wsam:Action="http://Volumen/VolumenEsfera/CatalogoResponse" message="tns:CatalogoResponse" />
+    </operation>
     <operation name="agregarcompra">
-      <input wsam:Action="http://Volumen/VolumenEsfera/agregarcompraRequest" message="tns:agregarcompra" />
-      <output wsam:Action="http://Volumen/VolumenEsfera/agregarcompraResponse" message="tns:agregarcompraResponse" />
+      <input wsam:Action="http://Volumen/VolumenEsfera/agregarcompra" message="tns:agregarcompra" />
     </operation>
     <operation name="carritodot">
       <input wsam:Action="http://Volumen/VolumenEsfera/carritodotRequest" message="tns:carritodot" />
       <output wsam:Action="http://Volumen/VolumenEsfera/carritodotResponse" message="tns:carritodotResponse" />
     </operation>
-    <operation name="comprar">
-      <input wsam:Action="http://Volumen/VolumenEsfera/comprarRequest" message="tns:comprar" />
-      <output wsam:Action="http://Volumen/VolumenEsfera/comprarResponse" message="tns:comprarResponse" />
+    <operation name="limpiarporcomprar">
+      <input wsam:Action="http://Volumen/VolumenEsfera/limpiarporcomprar" message="tns:limpiarporcomprar" />
+    </operation>
+    <operation name="AgregarACarritoDesdeCompras">
+      <input wsam:Action="http://Volumen/VolumenEsfera/AgregarACarritoDesdeCompras" message="tns:AgregarACarritoDesdeCompras" />
     </operation>
   </portType>
   <binding name="VolumenEsferaPortBinding" type="tns:VolumenEsfera">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="agregarcarrito">
+    <operation name="eliminarcomprar">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
       </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="Login">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="Catalogo">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
     </operation>
     <operation name="dotcompras">
       <soap:operation soapAction="" />
@@ -115,16 +100,13 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="agregarcompra">
+    <operation name="agregarcarrito">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
       </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
     </operation>
-    <operation name="carritodot">
+    <operation name="Login">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -138,9 +120,42 @@
       <input>
         <soap:body use="literal" />
       </input>
+    </operation>
+    <operation name="Catalogo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
       <output>
         <soap:body use="literal" />
       </output>
+    </operation>
+    <operation name="agregarcompra">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="carritodot">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="limpiarporcomprar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="AgregarACarritoDesdeCompras">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
     </operation>
   </binding>
   <service name="VolumenEsfera">
