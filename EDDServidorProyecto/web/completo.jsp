@@ -63,6 +63,9 @@
                                     grafo += "\nsubgraph cluster2{";
                                     grafo += datoServer.PRODUCTOS.getDot();
                                     grafo += "}\n";
+                                    grafo += "\nsubgraph cluster3{";
+                                    grafo += datoServer.VENTAS.getDot();
+                                    grafo += "}\n";
                                     grafo += "}";
                                     
                                     String path = getServletContext().getRealPath("") + File.separator + "uploads";
