@@ -72,8 +72,8 @@ public class VolumenEsfera {
     @WebMethod(operationName = "agregarcarrito")
      @Oneway
     public void agregarcarrito(String user,int cantidad,long codigo) {
-        //TODO write your implementation code here:
-       
+        //agregar a carrito
+        datoServer.USUARIOS.agreagarACarrito(user, cantidad, codigo);
     }
     /**
      * Web service operation
@@ -84,8 +84,8 @@ public class VolumenEsfera {
     @WebMethod(operationName = "agregarcompra")
      @Oneway
     public void agregarcompra(String user,int cantidad,long codigo) {
-        //TODO write your implementation code here:
-       
+        //agregar a whishlist
+       datoServer.USUARIOS.agreagarAPorComprar(user, cantidad, codigo);
     }   
     /**
      * Web service operation
@@ -94,8 +94,8 @@ public class VolumenEsfera {
         @WebMethod(operationName = "comprar")
          @Oneway
     public void comprar(String usuario) {
-        //TODO write your implementation code here:
-       
+        //pasar el carrito a ventas
+        datoServer.comprarCarrito(usuario);
     }   
 
     /**
@@ -105,6 +105,8 @@ public class VolumenEsfera {
     @WebMethod(operationName = "limpiarporcomprar")
     @Oneway
     public void limpiarporcomprar(String user) {
+        //vaciar whislist
+        datoServer.USUARIOS.vaciarPorComprar(user);
     }
 
     /**
@@ -114,6 +116,8 @@ public class VolumenEsfera {
     @WebMethod(operationName = "AgregarACarritoDesdeCompras")
     @Oneway
     public void AgregarACarritoDesdeCompras(String user) {
+        //agregar toda la wishlista a carrito
+        datoServer.USUARIOS.porComprarACarrito(user);
     }
 
     /**
@@ -123,5 +127,7 @@ public class VolumenEsfera {
     @WebMethod(operationName = "eliminarcomprar")
     @Oneway
     public void eliminarcomprar(@WebParam(name = "user") String user) {
+        //eliminar uno a uno del carrito
+        datoServer.USUARIOS.quitarUnoDeCarrito(user);
     }
 }

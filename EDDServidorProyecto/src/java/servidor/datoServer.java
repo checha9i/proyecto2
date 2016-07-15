@@ -5,10 +5,12 @@
  */
 package servidor;
 
+import estructuras.Cola;
 import estructuras.arbolB.Arbol;
 import estructuras.avl.AVL;
 import estructuras.hash.HashTable;
 import genericos.Producto;
+import genericos.Usuario;
 
 /**
  *
@@ -20,6 +22,15 @@ public class datoServer {
     public static final AVL USUARIOS = new AVL();
     public static final Arbol VENTAS = new Arbol();
     public static final HashTable PRODUCTOS = new HashTable(23);
+    
+    public static void comprarCarrito(String nickname){
+        AVL.Nodo usuario = USUARIOS.buscar(toAscci(nickname), USUARIOS.getRaiz());
+        if(usuario != null){
+            Cola carrito = usuario.getCarrito();
+            Usuario user = usuario.getUsuario();
+            VENTAS.realizarCompra(carrito, user);
+        }//fin if
+    }
     
     public static void cargaDatos(String archivo){
         archivo = archivo.replace("\n", "");
@@ -71,4 +82,12 @@ public class datoServer {
         VENTAS.actualizarVentas();
     }
     
+    private static int toAscci(String palabra) {
+        int valor = 0;
+        for (int i = 0; i < palabra.length(); i++) {
+            char caracter = palabra.charAt(i);
+            valor += (int) caracter;
+        }//fin for
+        return valor;
+    }
 }

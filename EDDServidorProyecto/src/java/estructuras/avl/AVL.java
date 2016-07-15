@@ -28,6 +28,47 @@ public class AVL {
         this.raiz = null;
     }
     
+    public boolean agreagarACarrito(String nickname, int cantidad, long codigo){
+        return insertarCarrito(nickname, cantidad+"", codigo+"");
+    }
+    
+    public boolean agreagarAPorComprar(String nickname, int cantidad, long codigo){
+        return insertarCompra(nickname, cantidad+"", codigo+"");
+    }
+    
+    public boolean porComprarACarrito(String nickname){
+        Nodo usuario = buscar(toAscci(nickname), getRaiz());
+        if(usuario != null){
+            boolean flag = false;
+            while(!usuario.getCompras().isEmpty()){
+                usuario.getCarrito().insertar(usuario.getCompras().remover());
+                flag = true;
+            }//fin while
+            return flag;
+        }//fin if
+        return false;
+    }
+    
+    public boolean quitarUnoDeCarrito(String nickname){
+        Nodo usuario = buscar(toAscci(nickname), getRaiz());
+        if (usuario != null) {
+            usuario.carrito.remover();
+            return true;
+        }//fin if
+        return false;
+    }
+    
+    public boolean vaciarPorComprar(String nickname){
+        Nodo usuario = buscar(toAscci(nickname), getRaiz());
+        if (usuario != null) {
+            while (!usuario.getCompras().isEmpty()) {
+                usuario.getCompras().remover();
+            }//fin while
+            return true;
+        }//fin if
+        return false;
+    }
+    
     public boolean eliminar(int clave){
         Nodo eliminado = remover(getRaiz(), clave);
         return eliminado != null;
