@@ -32,6 +32,7 @@ public class ListaSimple {
             getUltimo().setSiguiente(nuevo);
             setUltimo(nuevo);
         }//fin else
+        setContadorId(getContadorId() + 1);
     }
     
     public Nodo crearNodo(Info dato){
@@ -61,9 +62,9 @@ public class ListaSimple {
         String dot = "\nnode [shape=record];\n";
         Nodo actual = getPrimero();
         while(actual != null){
-            dot += "node" + actual.getId() + "[label=\"" + actual.dato.getDotInfo() + "\"];\n";
+            dot += "node" + actual.getId() + getId()  + "[label=\"" + actual.dato.getDotInfo()  + "\"];\n";
             if(actual.getSiguiente() != null){
-                dot += "node" + actual.getId() + " -> node" + actual.getSiguiente().getId() + ";\n";
+                dot += "node" + actual.getId() + getId()  + " -> node" + actual.getSiguiente().getId() + getId()  + ";\n";
             }//fin if
             actual = actual.getSiguiente();
         }//fin while

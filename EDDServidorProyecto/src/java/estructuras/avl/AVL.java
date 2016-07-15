@@ -9,7 +9,10 @@ import estructuras.Cola;
 import estructuras.ListaSimple;
 import estructuras.detalle.InfoCompras;
 import estructuras.detalle.InfoDireccion;
+import genericos.Grafo;
+import genericos.Producto;
 import genericos.Usuario;
+import servidor.datoServer;
 
 /**
  *
@@ -53,36 +56,52 @@ public class AVL {
     }
     
     public String getDot(){
-        String dot = "node [shape=record];\n";
-        dot += getDotNodes(dot, getRaiz());
-        return dot;
+        Grafo grafo = new Grafo();
+        grafo.grafo = "node [shape=record];\n";
+        getDotNodes(grafo, getRaiz());
+        return grafo.grafo;
     }
     
-    private String getDotNodes(String dot, Nodo raiz){
-        String grafo = "";
+    public String getDotCarrito(String nickname){
+        Nodo usuario = buscar(toAscci(nickname), getRaiz());
+        if(usuario != null){
+            return usuario.getCarrito().getDot();
+        }//fin if
+        return "";
+    }
+    
+    public String getDotCompras(String nickname){
+        Nodo usuario = buscar(toAscci(nickname), getRaiz());
+        if(usuario != null){
+            return usuario.getCompras().getDot();
+        }//fin if
+        return "";
+    }
+    
+    private void getDotNodes(Grafo grafo, Nodo raiz){
         if(raiz != null){
-            grafo += "node"+ raiz.getId() +"[label\"<f0> | <f1> "+ raiz.getUsuario().getNickname() +"\\n"+ raiz.getUsuario().getContraseña() +" | <f2>\"];\n";
+            grafo.grafo += "node"+ raiz.getId() +"[label=\"<f0> | <f1> "+ raiz.getUsuario().getNickname() +"\\n"+ raiz.getUsuario().getContraseña() +" | <f2>\"];\n";
             if(raiz.getIzquierdo() != null){
-                grafo += "\"node" + raiz.getId() +"\":f0 -> \"node" + raiz.getIzquierdo().getId() + "\":f1;\n";
+                grafo.grafo += "\"node" + raiz.getId() +"\":f0 -> \"node" + raiz.getIzquierdo().getId() + "\":f1;\n";
             }//fin if
             if(raiz.getDerecho()!= null){
-                grafo += "\"node" + raiz.getId() +"\":f2 -> node" + raiz.getDerecho().getId() + "\":f1;\n";
+                grafo.grafo += "\"node" + raiz.getId() +"\":f2 -> \"node" + raiz.getDerecho().getId() + "\":f1;\n";
             }//fin if
             if(!raiz.getDirecciones().isEmpty()){
-                grafo += "\"node" + raiz.getId() +"\":f1 -> node" + raiz.getDirecciones().getPrimero().getId() + ";\n";
-                grafo += "{\n" + raiz.getDirecciones().getDot() + "}\n";
+                grafo.grafo += "\"node" + raiz.getId() +"\":f1 -> node" + raiz.getDirecciones().getPrimero().getId() + raiz.getDirecciones().getId() + "[label=\"Direcciones\"];\n";
+                grafo.grafo += "{" + raiz.getDirecciones().getDot() + "}\n";
             }//fin if
             if(!raiz.getCarrito().isEmpty()){
-                grafo += "\"node" + raiz.getId() +"\":f1 -> node" + raiz.getCarrito().getPrimero().getId() + ";\n";
-                grafo += "{\n" + raiz.getCarrito().getDot() + "}\n";
+                grafo.grafo += "\"node" + raiz.getId() +"\":f1 -> node" + raiz.getCarrito().getPrimero().getId() + raiz.getCarrito().getId() + "[label=\"Carrito\"];\n";
+                grafo.grafo += "{" + raiz.getCarrito().getDot() + "}\n";
             }//fin if
             if(!raiz.getCompras().isEmpty()){
-                grafo += "\"node" + raiz.getId() +"\":f1 -> node" + raiz.getCompras().getPrimero().getId() + ";\n";
-                grafo += "{\n" + raiz.getCompras().getDot() + "}\n";
+                grafo.grafo += "\"node" + raiz.getId() +"\":f1 -> node" + raiz.getCompras().getPrimero().getId() + raiz.getCompras().getId() + "[label=\"Por Comprar\"];\n";
+                grafo.grafo += "{" + raiz.getCompras().getDot() + "}\n";
             }//fin if
+            getDotNodes(grafo, raiz.getIzquierdo());
+            getDotNodes(grafo, raiz.getDerecho());
         }//fin if
-        dot += grafo;
-        return dot;
     }
     
     private Nodo buscarMenor(Nodo nodo){
@@ -97,29 +116,91 @@ public class AVL {
         return balancear(nodo);
     }
     
-    public boolean insertarDireccion(InfoDireccion direccion, String nickname){
+    public boolean insertarUsuario(String nickname, String contrasena){
+        Nodo usuario = buscar(toAscci(nickname), getRaiz());
+        if(usuario == null){
+            setRaiz(insertar(new Nodo(nickname, contrasena, getContadorId()), getRaiz()));
+        }//fin if
+        return false;
+    }
+    
+    public boolean insertarDireccion(String nickname, String direccion, String envioS, String facturacionS){
+        int envio, facturacion;
+        
+        try {
+            envio = Integer.parseInt(envioS);
+        } catch (Exception e) {
+            envio = 0;
+        }
+        
+        try {
+            facturacion = Integer.parseInt(facturacionS);
+        } catch (Exception e) {
+            facturacion = 0;
+        }
+        
+        InfoDireccion datos = new InfoDireccion(direccion, envio, facturacion);
         Nodo usuario = buscar(toAscci(nickname), getRaiz());
         if(usuario != null){
-            usuario.getDirecciones().insertar(usuario.getDirecciones().crearNodo(direccion));
+            usuario.getDirecciones().insertar(usuario.getDirecciones().crearNodo(datos));
             return true;
         }//fin if
         return false;
     }
     
-    public boolean insertarCompra(InfoCompras compras, String nickname){
-        Nodo usuario = buscar(toAscci(nickname), getRaiz());
-        if(usuario != null){
-            usuario.getCompras().insertar(usuario.getCompras().crearNodo(compras));
-            return true;
+    public boolean insertarCompra(String nickname, String cantidadS, String codigoS){
+        int cantidad;
+        long codigo;
+        
+        try {
+            cantidad = Integer.parseInt(cantidadS);
+        } catch (Exception e) {
+            cantidad = 0;
+        }
+        
+        try {
+            codigo = Long.parseLong(codigoS);
+        } catch (Exception e) {
+            codigo = 0;
+        }
+        
+        Producto producto = datoServer.PRODUCTOS.buscar(codigo);
+        if(producto != null){
+            InfoCompras compras = new InfoCompras(producto, cantidad);
+            Nodo usuario = buscar(toAscci(nickname), getRaiz());
+            if (usuario != null) {
+                usuario.getCompras().insertar(usuario.getCompras().crearNodo(compras));
+                return true;
+            }//fin if
         }//fin if
         return false;
     }
     
-    public boolean insertarCarrito(InfoCompras compras, String nickname){
-        Nodo usuario = buscar(toAscci(nickname), getRaiz());
-        if(usuario != null){
-            usuario.getCarrito().insertar(usuario.getCarrito().crearNodo(compras));
-            return true;
+    public boolean insertarCarrito(String nickname, String cantidadS, String codigoS){
+        int cantidad;
+        long codigo;
+        
+        try {
+            cantidad = Integer.parseInt(cantidadS);
+        } catch (Exception e) {
+            cantidad = 0;
+        }
+        
+        try {
+            codigo = Long.parseLong(codigoS);
+        } catch (Exception e) {
+            codigo = 0;
+        }
+        
+        Producto producto = datoServer.PRODUCTOS.buscar(codigo);
+        if(producto != null){
+            InfoCompras compras = new InfoCompras(producto, cantidad);
+
+            Nodo usuario = buscar(toAscci(nickname), getRaiz());
+            if (usuario != null) {
+                usuario.getCarrito().insertar(usuario.getCarrito().crearNodo(compras));
+                return true;
+            }//fin if
         }//fin if
         return false;
     }
@@ -253,9 +334,9 @@ public class AVL {
             this.clave = toAscci(nickname);
             this.id = id;
             this.altura = 1;
-            this.usuario = new Usuario();
-            this.direcciones = new ListaSimple(id);
-            this.compras = new Cola(id);
+            this.usuario = new Usuario(nickname, contraseña);
+            this.direcciones = new ListaSimple(id + 4000);
+            this.compras = new Cola(id + 2000);
             this.carrito = new Cola(id);
         }
         
