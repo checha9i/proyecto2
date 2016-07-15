@@ -58,6 +58,54 @@ public class HashTable {
         return null;
     }
     
+    public void bajas(String codigoS){
+        long codigoViejo;
+
+        try {
+            codigoViejo = Long.parseLong(codigoS);
+        } catch (Exception e) {
+            codigoViejo = 0;
+        }
+
+        Producto viejo = buscar(codigoViejo);
+        if(viejo != null){
+            eliminar(viejo);
+        }//fin if
+    }
+    
+    public void cambios(String codigoS, String nombre, String marca, String precio, String ruta){
+        long codigoViejo;
+        
+        try {
+            codigoViejo = Long.parseLong(codigoS);
+        } catch (Exception e) {
+            codigoViejo = 0;
+        }
+ 
+        Producto viejo = buscar(codigoViejo);
+        
+        if(viejo != null){
+            if (!nombre.equals("")) {
+                nombre = viejo.getNombre();
+            }//fin if
+
+            if (!marca.equals("")) {
+                marca = viejo.getMarca();
+            }//fin if
+
+            if (!precio.equals("")) {
+                precio = viejo.getPrecio() + "";
+            }//fin if
+
+            if (!ruta.equals("")) {
+                ruta = viejo.getRuta();
+            }//fin if
+
+            Producto nuevo = new Producto(codigoS, nombre, marca, precio, ruta);
+            modificar(viejo, nuevo);
+        }//fin if
+    }
+    
     public boolean eliminar(Producto producto){
         for(int i = 0; i < getTabla().length; i++){
             if(getTabla()[i] == producto){
