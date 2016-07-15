@@ -49,7 +49,7 @@ public class VolumenEsfera {
      */
     @WebMethod(operationName = "carritodot")
     public String carritodot(String usuario) {
-        return datoServer.USUARIOS.getDotCarrito(usuario);
+        return "digraph g{" + datoServer.USUARIOS.getDotCarrito(usuario) + "}";
     }
 
     /**
@@ -60,7 +60,7 @@ public class VolumenEsfera {
     @WebMethod(operationName = "dotcompras")
      
     public String dotcompras(String usuario) {
-        return datoServer.USUARIOS.getDotCompras(usuario);
+        return "digraph g{" + datoServer.USUARIOS.getDotCompras(usuario) + "}";
     }
 
     /**

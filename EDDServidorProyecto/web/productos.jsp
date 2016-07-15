@@ -63,7 +63,7 @@
                                     String path = getServletContext().getRealPath("") + File.separator + "uploads";
                                     
                                     try{
-                                        File archivo = new File("uploads"+ File.separator + "productos.txt");
+                                        File archivo = new File(path + File.separator + "productos.txt");
                                         FileWriter fw = new FileWriter(archivo);
                                         BufferedWriter bw = new BufferedWriter(fw);
                                         bw.write(grafo);
