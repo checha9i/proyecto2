@@ -1,4 +1,4 @@
-
+digraph g{
 node [shape=record];
 node02000[label="Cantidad: 2 \nProducto: CYRUS the GREAT"];
 node02000 -> node12000;
@@ -7,3 +7,6 @@ node12000 -> node22000;
 node22000[label="Cantidad: 4 \nProducto: CYRUS the GREAT"];
 node22000 -> node32000;
 node32000[label="Cantidad: 6 \nProducto: CYRUS the GREAT"];
+node32000 -> node42000;
+node42000[label="Cantidad: 4 \nProducto: Elizabeth Banks"];
+}
