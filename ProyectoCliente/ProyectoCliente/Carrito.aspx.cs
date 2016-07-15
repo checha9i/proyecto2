@@ -24,7 +24,7 @@ namespace ProyectoCliente
             String dot = proxy.dotcompras(Session["usuario"].ToString());
 
             graficar(dot);
-            int d = 0;
+            
         }
         public void graficar(String dot) {
             System.IO.File.WriteAllText(HttpContext.Current.Server.MapPath("~")+"imagen\\graficar.txt", dot);
