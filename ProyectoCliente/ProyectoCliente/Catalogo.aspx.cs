@@ -14,7 +14,8 @@ namespace ProyectoCliente
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["log"] == "no")
+            AgregoA.Text = "";
+            if ("no" == Session["log"].ToString())
             {
                 Server.Transfer("LogIn.aspx");
             }
@@ -77,6 +78,13 @@ namespace ProyectoCliente
         protected void Button1_Click(object sender, EventArgs e)
         {
             proxy.agregarcarrito(Session["usuario"].ToString(), int.Parse(cantidad.Text), long.Parse(Codigo.Text));
+            AgregoA.Text = "Agregado a Carrito";
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            proxy.agregarcompra(Session["usuario"].ToString(), int.Parse(cantidad.Text), long.Parse(Codigo.Text));
+            AgregoA.Text = "Agregado a Por Comprar";
         }
 
         

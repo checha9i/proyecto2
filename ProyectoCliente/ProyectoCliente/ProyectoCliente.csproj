@@ -98,7 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="imagen\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
@@ -110,6 +109,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="imagen\graficar.jpg" />
     <Content Include="LogIn.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -156,16 +156,7 @@
     <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.LoginResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.agregarcarritoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.agregarcompraResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.carritodotResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.comprarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\servicioweb\ProyectoCliente.servicioweb.dotcomprasResponse.datasource">

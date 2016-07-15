@@ -18,8 +18,7 @@ namespace ProyectoCliente
         protected void Login(object sender, EventArgs e)
         {
             String user = User.ToString(), pass = Password.ToString();
-            //if (proxy.Login(user, pass) == "Ingreso")
-            if(true)
+            if (proxy.Login(user, pass) == "Ingreso")
             {
                 Session["usuario"] = user;
                 Session["log"] = "si";

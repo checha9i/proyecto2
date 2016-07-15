@@ -1,1 +1,1 @@
-digraph {n1->n2;}
+digraph {n3->n1;}
