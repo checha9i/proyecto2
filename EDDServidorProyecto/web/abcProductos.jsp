@@ -37,6 +37,9 @@
                             <a href="reportes.jsp">Reportes</a>
                         </li>
                         <li>
+                            <a href="abcUsuarios.jsp">ABC Usuarios</a>
+                        </li>
+                        <li>
                             <a href="abcProductos.jsp">ABC Productos</a>
                         </li>
                     </ul>
@@ -53,9 +56,36 @@
                     <div class="col-lg-12 text-center jumbotron">
                         <h1>ABC Productos</h1>
                         <br/>
-                        <form action="subir.jsp" method="post">
-                            <input type="file" name="file" class="btn btn-primary"/><br/>
-                            <input type="submit" value="Upload" class="btn btn-success"/>
+                        <form action="agregarProducto.jsp" method="post">
+                            Codigo:
+                            <input type="text" name="newCodigo" class="col-lg-2 form-control"/><br/>
+                            Nombre:
+                            <input type="text" name="newNombre" class="col-lg-2 form-control"/><br/>
+                            Marca:
+                            <input type="text" name="newMarca" class="col-lg-2 form-control"/><br/>
+                            Precio:
+                            <input type="text" name="newPrecio" class="col-lg-2 form-control"/><br/>
+                            Ruta:
+                            <input type="text" name="newRuta" class="col-lg-2 form-control"/><br/>
+                            <input type="submit" value="Agregar" class="btn btn-success"/>
+                        </form>
+                        <form action="cambiarProducto.jsp" method="post">
+                            Codigo:
+                            <input type="text" name="codigo" class="col-lg-2 form-control"/><br/>
+                            Nombre:
+                            <input type="text" name="nombre" class="col-lg-2 form-control"/><br/>
+                            Marca:
+                            <input type="text" name="marca" class="col-lg-2 form-control"/><br/>
+                            Precio:
+                            <input type="text" name="precio" class="col-lg-2 form-control"/><br/>
+                            Ruta:
+                            <input type="text" name="ruta" class="col-lg-2 form-control"/><br/>
+                            <input type="submit" value="Cambiar" class="btn btn-success"/>
+                        </form>
+                        <form action="eliminarProducto.jsp" method="post">
+                            Codigo:
+                            <input type="text" name="deleteCodigo" class="col-lg-2 form-control"/><br/>
+                            <input type="submit" value="Eliminar" class="btn btn-success"/>
                         </form>
                     </div>
                 </div>

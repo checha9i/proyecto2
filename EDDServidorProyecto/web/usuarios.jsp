@@ -40,6 +40,12 @@
                         <li>
                             <a href="reportes.jsp">Reportes</a>
                         </li>
+                        <li>
+                            <a href="abcUsuarios.jsp">ABC Usuarios</a>
+                        </li>
+                        <li>
+                            <a href="abcProductos.jsp">ABC Productos</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

@@ -1,7 +1,7 @@
 <%-- 
-    Document   : index
-    Created on : 29/10/2013, 10:17:51 PM
-    Author     : Aurora
+    Document   : abcUsuarios
+    Created on : Jul 16, 2016, 9:59:39 AM
+    Author     : David
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,11 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inicio</title>
+        <title>ABC Productos</title>
         <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        
+
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
@@ -51,26 +51,29 @@
 
         <!-- Page Content -->
         <div class="container">
-                <div class="page-wr">
-                    <div class="row">
-                        <div class="col-lg-12 text-center jumbotron">
-                            <h1>Estructura de Datos - Proyecto #2</h1>
-                            <p class="lead">Datos:</p>
-                            <ul class="list-unstyled">
-                                <li>Carne: 201404007</li>
-                                <li>Nombre: David Alejandro Asencio Sagastume</li>
-                            </ul>
-                            <ul class="list-unstyled">
-                                <li>Carne: 201313819</li>
-                                <li>Nombre: Cesar Javier Solares Orozco</li>
-                            </ul>
-                        </div>
+            <div class="page-wr">
+                <div class="row">
+                    <div class="col-lg-12 text-center jumbotron">
+                        <h1>ABC Usuarios</h1>
+                        <br/>
+                        <form action="agregarUsuario.jsp" method="post">
+                            Nickname:
+                            <input type="text" name="newUser" class="col-lg-2 form-control"/><br/>
+                            Contraseña:
+                            <input type="text" name="passNewUser" class="col-lg-2 form-control"/><br/>
+                            <input type="submit" value="Agregar" class="btn btn-success"/>
+                        </form>
+                        <form action="eliminarUsuario.jsp" method="post">
+                            Nickname:
+                            <input type="text" name="deleteUser" class="col-lg-2 form-control"/><br/>
+                            <input type="submit" value="Eliminar" class="btn btn-success"/>
+                        </form>
                     </div>
                 </div>
+            </div>
         </div>        
-        
+
         <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="bootstrap-3.3.6-dist/js/jquery.js" type="text/javascript"></script>
     </body>
 </html>
-

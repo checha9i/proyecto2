@@ -130,4 +130,30 @@ public class VolumenEsfera {
         //eliminar uno a uno del carrito
         datoServer.USUARIOS.quitarUnoDeCarrito(user);
     }
+
+    /**
+     * Web service operation
+     * @param user
+     * @param direccion
+     * @param envio
+     * @param facturacion
+     */
+    @WebMethod(operationName = "agregardireccion")
+    @Oneway
+    public void agregardireccion(String user, String direccion, String envio, String facturacion) {
+        datoServer.USUARIOS.insertarDireccion(user, direccion, envio, facturacion);
+    }
+
+    /**
+     * Web service operation
+     * @param user
+     * @param direccion
+     * @param envio
+     * @param facturacion
+     */
+    @WebMethod(operationName = "eliminardireccion")
+    @Oneway
+    public void eliminardireccion(@WebParam(name = "user") String user, @WebParam(name = "direccion") String direccion, @WebParam(name = "envio") String envio, @WebParam(name = "facturacion") String facturacion) {
+        datoServer.USUARIOS.eliminarDireccion(user, direccion, envio, facturacion);
+    }
 }

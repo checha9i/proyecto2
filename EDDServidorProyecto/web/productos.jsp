@@ -40,6 +40,12 @@
                         <li>
                             <a href="reportes.jsp">Reportes</a>
                         </li>
+                        <li>
+                            <a href="abcUsuarios.jsp">ABC Usuarios</a>
+                        </li>
+                        <li>
+                            <a href="abcProductos.jsp">ABC Productos</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -57,7 +63,7 @@
                             <div class="row">
                                 <%
                                     String grafo = "digraph g{";
-                                    grafo += datoServer.VENTAS.getDot();
+                                    grafo += datoServer.PRODUCTOS.getDot();
                                     grafo += "}";
                                     
                                     String path = getServletContext().getRealPath("") + File.separator + "uploads";
