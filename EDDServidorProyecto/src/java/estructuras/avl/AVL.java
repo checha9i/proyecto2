@@ -70,6 +70,10 @@ public class AVL {
         return false;
     }
     
+    public void eliminarUsuario(String nickname){
+        eliminar(toAscci(nickname));
+    }
+    
     public boolean eliminar(int clave){
         Nodo eliminado = remover(getRaiz(), clave);
         return eliminado != null;
@@ -164,6 +168,28 @@ public class AVL {
             setRaiz(insertar(new Nodo(nickname, contrasena, getContadorId()), getRaiz()));
         }//fin if
         return false;
+    }
+    
+    public void eliminarDireccion(String nickname, String direccion, String envioS, String facturacionS){
+        int envio, facturacion;
+
+        try {
+            envio = Integer.parseInt(envioS);
+        } catch (Exception e) {
+            envio = 0;
+        }
+
+        try {
+            facturacion = Integer.parseInt(facturacionS);
+        } catch (Exception e) {
+            facturacion = 0;
+        }
+  
+        InfoDireccion dato = new InfoDireccion(direccion, envio, facturacion);
+        Nodo usuario = buscar(toAscci(nickname), getRaiz());
+        if (usuario != null) {
+            usuario.getDirecciones().remover(dato);
+        }//fin if
     }
     
     public boolean insertarDireccion(String nickname, String direccion, String envioS, String facturacionS){
@@ -333,7 +359,7 @@ public class AVL {
     private void arreglarAltura(Nodo nodo){
         int hl = obtenerAltura(nodo.getIzquierdo());
         int hr = obtenerAltura(nodo.getDerecho());
-        nodo.setAltura((hl>hr) ? hl : hr);
+        nodo.setAltura(((hl>hr) ? hl : hr)+1);
     }
     
     private int toAscci(String palabra) {

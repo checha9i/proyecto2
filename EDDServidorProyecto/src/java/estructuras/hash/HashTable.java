@@ -85,19 +85,19 @@ public class HashTable {
         Producto viejo = buscar(codigoViejo);
         
         if(viejo != null){
-            if (!nombre.equals("")) {
+            if (nombre.equals("")) {
                 nombre = viejo.getNombre();
             }//fin if
 
-            if (!marca.equals("")) {
+            if (marca.equals("")) {
                 marca = viejo.getMarca();
             }//fin if
 
-            if (!precio.equals("")) {
+            if (precio.equals("")) {
                 precio = viejo.getPrecio() + "";
             }//fin if
 
-            if (!ruta.equals("")) {
+            if (ruta.equals("")) {
                 ruta = viejo.getRuta();
             }//fin if
 

@@ -91,12 +91,22 @@ public class Graficar {
         for (Nodo i : p.Claves) {
             if (i != null) {
                 if (cue == p.Cuentas) {
-                    ccc += "<f"+i.id+">"+i.id+"\\n"+i.Fecha+"\\n"+i.Total+"\\n"+i.user.getNickname();
+                    if(i.user != null){
+                        ccc += "<f" + i.id + ">" + i.id + "\\n" + i.Fecha + "\\n" + i.Total + "\\n" + i.user.getNickname();
+                    }else{
+                        ccc += "<f" + i.id + ">" + i.id + "\\n" + i.Fecha + "\\n" + i.Total + "\\nUSUARIO ELIMINADO";
+                    }
                 } else {
-                    ccc +="<f"+i.id+">"+ i.id+"\\n"+i.Fecha+"\\n"+i.Total+"\\n"+i.user.getNickname() + "|";
+                    if(i.user != null){
+                        ccc += "<f" + i.id + ">" + i.id + "\\n" + i.Fecha + "\\n" + i.Total + "\\n" + i.user.getNickname() + "|";
+                    }else{
+                        ccc += "<f" + i.id + ">" + i.id + "\\n" + i.Fecha + "\\n" + i.Total + "\\nUSUARIO ELIMINADO|";
+                    }
                 }
-                enlaces += "nodo0:f"+i.id+"->node"+ i.Detalle.getId() +i.Detalle.getPrimero().getId() +";";
-                enlaces += i.Detalle.getDot();
+                if(i.Detalle.getPrimero() != null){
+                    enlaces += "nodo0:f" + i.id + "->node" + i.Detalle.getId() + i.Detalle.getPrimero().getId() + ";";
+                    enlaces += i.Detalle.getDot();
+                }//fin if 
             }
         
         }
@@ -121,12 +131,22 @@ public class Graficar {
         for (Nodo i : p.Claves) {
             if (i != null) {
                 if (cue == p.Cuentas) {
-                    ccc += "<f"+i.id+">"+i.id+"\\n"+i.Fecha+"\\n"+i.Total+"\\n"+i.user.getNickname();
+                    if(i.user != null){
+                        ccc += "<f" + i.id + ">" + i.id + "\\n" + i.Fecha + "\\n" + i.Total + "\\n" + i.user.getNickname();
+                    }else{
+                        ccc += "<f" + i.id + ">" + i.id + "\\n" + i.Fecha + "\\n" + i.Total + "\\nUSUARIO ELIMINADO";
+                    }
                 } else {
-                    ccc +="<f"+i.id+">"+ i.id+"\\n"+i.Fecha+"\\n"+i.Total+"\\n"+i.user.getNickname() + "|";
+                    if(i.user != null){
+                        ccc += "<f" + i.id + ">" + i.id + "\\n" + i.Fecha + "\\n" + i.Total + "\\n" + i.user.getNickname() + "|";
+                    }else{
+                        ccc += "<f" + i.id + ">" + i.id + "\\n" + i.Fecha + "\\n" + i.Total + "\\nUSUARIO ELIMINADO|";
+                    }
                 }
-                enlaces += "nodo"+ padre + actual +":f"+i.id+"->node"+i.Detalle.getId()+i.Detalle.getPrimero().getId()+";";
-                enlaces += i.Detalle.getDot();
+                if(i.Detalle.getPrimero() != null){
+                    enlaces += "nodo" + padre + actual + ":f" + i.id + "->node" + i.Detalle.getId() + i.Detalle.getPrimero().getId() + ";";
+                    enlaces += i.Detalle.getDot();
+                }//fin if
             }
             cue++;
         }
